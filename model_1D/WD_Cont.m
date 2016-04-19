@@ -1,11 +1,11 @@
-function WD = WD_Cont(f,g,x)
+function [WD,G,xG] = WD_Cont(f,g,x)
 % 
 % Compute the Wasserstein distance between two density distributions f and g defined on the same interval.
 % 
 
     % A) compute the cdf
-    [xF,F] = cdf_clean(x,f);
-    [xG,G] = cdf_clean(x,g);
+    [F,xF] = cdf_clean(x,f);
+    [G,xG] = cdf_clean(x,g);
     
     % B) Quantile
     z = sort(union(F, G));

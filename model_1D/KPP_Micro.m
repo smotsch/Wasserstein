@@ -1,4 +1,4 @@
-function rho = KPP_Micro(rhoIC,x,D,dt,T,N)
+function [rho,X] = KPP_Micro(rhoIC,x,D,dt,T,N)
 % 
 % Solve the KPP equation as a particle system:
 %    dX_t = σdB_t
@@ -8,7 +8,8 @@ function rho = KPP_Micro(rhoIC,x,D,dt,T,N)
     % init
     dx = x(2)-x(1);
     nX = length(x);
-    nT = floor(T/dt + .5); 
+    nT = floor(T(end)/dt + .5); 
+%     nT = length(T);
     rho = zeros(nX,nT+1);
     sigma = sqrt(2*D);
     % Initial Condition
@@ -16,7 +17,7 @@ function rho = KPP_Micro(rhoIC,x,D,dt,T,N)
     F = cumsum(rhoIC)*dx;
     Mass_rhoIC = F(end);
     F = F/F(end);
-    X = interp1(F,x,rand(N,1));
+    X = interp1(F,x,sort(rand(N,1)));
 
     %-------------------------------------------%
     %---            Big loop                 ---%

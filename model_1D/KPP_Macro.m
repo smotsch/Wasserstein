@@ -19,9 +19,10 @@ function rho = KPP_Macro(rhoIC,x,D,dt,T,methodNum)
     % init
     dx = x(2)-x(1);
     ld = D*dt/dx^2;
+    nT = floor(T(end)/dt + .5); 
     nX = length(x);
-    nT = floor(T/dt + .5); 
     rho = zeros(nX,nT+1);
+
     % Initial Condition
     rho(:,1) = rhoIC;
     
@@ -34,12 +35,14 @@ function rho = KPP_Macro(rhoIC,x,D,dt,T,methodNum)
     else
         % Cranck-Nicholson
         tao = D*(dt/2)/dx^2;
+
         % Create A & B
-        A = -tao*diag(ones(1,nX-1),-1) + ...
-            (1+2*tao)*diag(ones(nX,1)) ...
-            -tao*diag(ones(1,nX-1),1);
+        A = -tao.*diag(ones(1,nX-1),-1) +...
+            (1+2.*tao).*diag(ones(1,nX))...
+            -tao.*diag(ones(1,nX-1),1);
+        
         B = tao*diag(ones(1,nX-1),-1) + ...
-            (1-2*tao)*diag(ones(nX,1)) + ... 
+            (1-2*tao).*diag(ones(1,nX)) + ... 
             tao*diag(ones(1,nX-1),1);
         % Neuman BC
         A(end,1) = -tao; A(1,end) = -tao;
