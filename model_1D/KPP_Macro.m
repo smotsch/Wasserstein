@@ -20,7 +20,7 @@ function rho = KPP_Macro(rhoIC,x,D,dt,T,methodNum)
     dx = x(2)-x(1);
     ld = D*dt/dx^2;
     nX = length(x);
-    nT = floor(T/dt + .5); 
+    nT = floor(T(end)/dt + .5); 
     rho = zeros(nX,nT+1);
 
     % Initial Condition

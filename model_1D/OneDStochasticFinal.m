@@ -16,7 +16,7 @@ dx1 =.05;                                % meshsize for micro
 dx3 = .1;                             % meshsize for Hist for rhoMicro
 dx2 =.05;                                % meshsize for macro
 intX = a:dx1:b;                        % physical discretization
-dt = .001;                              % delta t
+dt = .01;                              % delta t
 T =  0:dt:1;                           % time vector
 IC = normpdf(intX,0,1) ;                               %  Initial condition 
 
@@ -41,8 +41,8 @@ for i = 1:length(num)
 
 %             [HistCDF,intXHist] = cdf_clean(intX,rhoMicro(:,j)');
 %             [MacroCDF,intXMacro] = cdf_clean(intX,rhoMacro(:,j)');
-             [WD_cont(j),MacroCDF(:,j),xMac] = WD_Cont(rhoMicro(:,j),rhoMacro(:,j),intX);
-             [WD_discreet(j),F(:,j),FINV(:,j),GINV(:,j)] = WD_discreet_cont(X,MacroCDF(:,j),xMac);
+              WD_cont(j) = WD_Cont(rhoMicro(:,j),rhoMacro(:,j),intX);
+              WD_discreet(j)= WD_discreet_cont(X,intX,rhoMacro(:,j));
 %             [WDHist(j)] = WDFinal(HistCDF,MacroCDF,intXHist,intXMacro);
 %             [WDParticle(j),pCombined,FINV,GINV] = WDFinal(StepCDF,MacroCDF,FINALX{j},intXMacro);
 %            [Vel1(i,j), Vel2(i,j),xLoc1(j),xLoc2(j)] = CalculateVelocity(T,rhoMacro(:,j),rhoMicro(:,j),intX,xLoc1(j-1),xLoc2(j-1));

@@ -13,7 +13,7 @@ xF = x;
 %---------------
 % B.1) From  0 à 1
 xF = [x(1)-dx xF];
-F = [0 F/F(end)];
+F = [0; F/F(end)];
 % B.2) Cut value above 1 (due to numerical errors)
 F = min(F,1);
 % B.3) Remove multiple value

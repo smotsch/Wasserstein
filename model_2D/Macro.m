@@ -17,7 +17,7 @@ clc; clear all; close all;
 
     x = linspace(-5,5,50);
     y = x;
-    T = linspace(0,1,50);
+    T = linspace(0,10,50);
     D =1;
     dt = .1;
     [X1,X2] = meshgrid(x,y);
@@ -45,7 +45,7 @@ clc; clear all; close all;
 
     rhoFINAL(:,:,1) = reshape(rhoIC,nX,nY,1);
     for j = 2:length(T)
-        rho(:,j) = Ainv*(B*rho(:,j-1) + dt*f(rho(:,j-1)));
+        rho(:,j) = Ainv*(B*rho(:,j-1) + dt/2*f(rho(:,j-1)));
         rhoFINAL(:,:,j) = reshape(rho(:,j),nX,nY,1);
         surf(X1,X2,rhoFINAL(:,:,j)); title('Solution');
         grid on; zlim([0 1.5]); xlabel('x'); 
@@ -54,6 +54,6 @@ clc; clear all; close all;
         colorbar;
         pause(.1);
     end
-    
+
 end
 
