@@ -1,5 +1,6 @@
 % This code computes the distance between sets of points in R^2, R^3 by calling the
 % Tableau code.
+% Authors: Shane Lubold (shane.Lubold@asu.edu) & Sebastien Motsch (smotsch@asu.edu)
 
 %Solve the optimal transport problem between two sets of points in R^2:
 %    {X_i}_i   ?  {Y_j}_j

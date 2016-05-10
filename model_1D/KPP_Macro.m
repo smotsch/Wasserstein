@@ -33,7 +33,7 @@ function rho = KPP_Macro(rhoIC,x,D,dt,T,methodNum)
         intR = 3:nX;		        % points on the Right
         intL = 1:(nX-2);		% points on the Left
     else
-        % Cranck-Nicholson
+        % Crank-Nicholson
         tao = D*(dt/2)/dx^2;
         % Create A & B
         A = -tao*diag(ones(1,nX-1),-1) + ...
@@ -61,7 +61,7 @@ function rho = KPP_Macro(rhoIC,x,D,dt,T,methodNum)
                 + dt*f(rho(:,k));
         end    
     else
-        % Cranck-Nicholson
+        % Crank-Nicholson
         for k = 1:nT
             % Strang splitting
             % ----------------
