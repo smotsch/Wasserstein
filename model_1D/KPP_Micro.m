@@ -1,4 +1,4 @@
-function [rho,X] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
+ function [rho] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
 % 
 % Solve the KPP equation as a particle system:
 %    dX_t = σdB_t
@@ -11,6 +11,7 @@ function [rho,X] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
     nT = floor(T(end)/dt + .5); 
     rho = zeros(nX,nT+1);
     sigma = sqrt(2*D);
+
     % Initial Condition
     %   -> compute the cdf of ρ_0 to generate the points
     F = cumsum(rhoIC)*dx;
