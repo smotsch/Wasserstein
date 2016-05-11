@@ -94,7 +94,7 @@ x1 = -5;
 x2 = 5;
 y1 = -5; 
 y2 = 5; 
-numIt = 100;
+N = 100;
 intX = linspace(x1,x2,150);
 intY = linspace(y1,y2,150); 
 dx = intX(2) - intX(1);
@@ -114,12 +114,10 @@ seedNum = 10;
 % randNumber1 = randn(numIt,length(intX),length(intX));
 % randNumber2 = randn(numIt,length(intX),length(intY));
 % %% Compute Brownian components x_i, y_i separately. 
-% for i = 2:numel(intX)
-%     xBrown(1:numIt,i) = xBrown(1:numIt,i-1) + sigma*sqrt(dt)*randNumber1(1:numIt,i-1);  
-% end
-% 
-% for i = 2:numel(intY)
-%     yBrown(1:numIt,i) = yBrown(1:numIt,i-1) + sigma*sqrt(dt)*randNumber2(1:numIt,i-1);
+% for i = 2:numel(t)
+%%     X = X+sigma*sqrt(dt)*randn(N,2);
+%     xBrown(1:N,i) = xBrown(1:numIt,i-1) + sigma*sqrt(dt)*randNumber1(1:numIt,i-1);  
+%     yBrown(1:N,i) = yBrown(1:numIt,i-1) + sigma*sqrt(dt)*randNumber2(1:numIt,i-1);
 % end
 % 
 % X = [xBrown; yBrown];
