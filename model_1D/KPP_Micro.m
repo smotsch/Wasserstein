@@ -1,4 +1,4 @@
- function [rho] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
+  function [rho,X] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
 % 
 % Solve the KPP equation as a particle system:
 %    dX_t = σdB_t
@@ -19,7 +19,7 @@
     F = F/F(end);
 %     rand(seedNum);
 %     rand(seedNum);
-    X = interp1(F,x,rand(N,1),'nearest');
+    X = interp1(F,x,rand(N,1));
     rho(:,1) = hist(X,x)*Mass_rhoIC/N/dx;
 
     %-------------------------------------------%
@@ -53,5 +53,5 @@
     end
     %-------------------------------------------%
     %-------------------------------------------%
-end
+ end
 

@@ -13,11 +13,11 @@ clc; clear all; close all;
 
 
     % Model
-    f = @(y) .1*y.*(1-y);
+    f = @(y) y.*(1-y);
 
     x = linspace(-5,5,50);
     y = linspace(-6,6,60);
-    D =2;
+    D =5;
     dt = .1;
     T = 10;
     intT = 0:dt:T;
@@ -25,7 +25,6 @@ clc; clear all; close all;
     X1_tp = X1';
     X2_tp = X2';
     rhoIC = mvnpdf([X1_tp(:) X2_tp(:)],[0, 0],[2,1]);
-
     
     % init
     dx = x(2)-x(1);
@@ -56,7 +55,8 @@ clc; clear all; close all;
         rho(:,j) = Ainv*(B*rho(:,j-1) + dt*f(rho(:,j-1)));
         rhoFINAL(:,:,j) = reshape(rho(:,j),nX,nY,1);
         surf(X1,X2,rhoFINAL(:,:,j)'); title('Solution');
-        grid on; zlim([0 1.5]); xlabel('x'); 
+        grid on; xlabel('x'); 
+%         zlim([0 1.5]);
         ylabel('y'); zlabel('f(x,y)'); 
         axis('equal')
         %a = gca; a.Box = 'on'; a.BoxStyle = 'full';
