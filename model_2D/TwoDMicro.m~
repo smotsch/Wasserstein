@@ -30,31 +30,10 @@
     
       xInit = normpdf(x,0,2);
       yInit = normpdf(y,0,1);
-      X = interp2([xInit ; yInit],rand(N,2));
-      Histogram =  hist3(X',[nX,nY]);
-      rho(:,:,1) = Histogram;
-
-%     % Initial Condition
-%     %   -> compute the cdf of ρ_0 to generate the points
-%     xInit = normpdf(x,0,2);
-%     yInit = normpdf(y,0,1);
-%     FInit = xInit'*yInit; %f(x,y) = f(x)*f(y), Independent Variables.
-%     figure; 
-%     surf(x',y',FInit);
-%     CDF = histogram2(xInit,yInit,nX,'Normalization', 'cdf'); % Find the CDF
-%     CDF = CDF.Values;
-%     figure;
-%     surf(x',y',CDF); xlabel('x'); ylabel('y'); zlabel('F(x,y)');
-% 
-%     [gridx,gridy] = meshgrid(rand(N,1),rand(N,1)); % find interpolation mesh
-%     [xmesh, ymesh] = meshgrid(-4:.1:4,-4:.1:4);
-%     X = interp2(CDF,gridx,gridy,'nearest');
-
-    
-    
-%     rho(:,:,1) = hist3(X);
-%     
-%     rho(:,1) = hist(X,x)*Mass_rhoIC/N/dx;
+      X = interp2(rand(N,2),[xInit ; yInit]);
+      
+      Histogram =  hist3(X,[nX,nY]);
+      rho(:,:,1) = (Histogram)./(sum(sum(Histogram)));
 
     %-------------------------------------------%
     %---            Big loop                 ---%
@@ -63,26 +42,31 @@
     for k = 1:nT
         % A) Move
         M = length(X);
-        X = X' + sigma*sqrt(dt)*randn(M,2);
+        X = X + sigma*sqrt(dt)*randn(M,2);
         % B) Birth/death
         rho(:,:,k+1) = hist3(X,[nX, nY]);
-        rho_at_X = interp2(x',y',rho(:,:,k+1),X(:,1)', X(:,2)'); % interpolate at x_i, coming from Brownian paths.
+        rho_at_X = interp2(X,rho(:,:,k+1)); % interpolate at x_i, coming from Brownian paths.
         %% ∂_t ρ = ρ(1-ρ)
         %% 1) density
-        oneMrho = (1-rho_at_X);               % 1-M at X(k)
+        oneMrho = (1-rho_at_X);               % 1-M at X(k)       
         %% 2) rand
         coin_M = rand(M,2);
         indexKill     = logical( (oneMrho<0).*(coin_M<dt*abs(oneMrho)) );
         indexDivision = logical( (oneMrho>0).*(coin_M<dt*abs(oneMrho)) );
+        
         %% 3) update
-        if (length(indexDivision)>0)
-            X_new = X(indexDivision,:);
+        if (length(indexDivision)>0)  
+            % First do column 1
+           X_new1 = X(indexDivision(:,1));
+           X_new2 = X(indexDivision(:,2));
         end
         if (length(indexKill)>0)
-            X(indexKill,:) = [];
+            X(indexKill) = [];
         end                                
         if (length(indexDivision)>0)
-            X = [X; X_new];
+            X1 = [X(:,1); X_new1];
+            X2 = [X(:,2); X_new2];
+            X = [X1 X2];
         end
     end
     %-------------------------------------------%
@@ -182,7 +166,7 @@ seedNum = 10;
         indexDivision = logical( (oneMrho>0).*(coin_M<dt*abs(oneMrho)) );
         %% 3) update
         if (length(indexDivision)>0)
-            X_new = X(indexDivision,:);
+            X_new = X(indexDivision);
         end
         if (length(indexKill)>0)
             X(indexKill,:) = [];
@@ -196,4 +180,23 @@ seedNum = 10;
     %-------------------------------------------%
 
 % end
+
+
+%     % Initial Condition
+%     %   -> compute the cdf of ρ_0 to generate the points
+%     xInit = normpdf(x,0,2);
+%     yInit = normpdf(y,0,1);
+%     FInit = xInit'*yInit; %f(x,y) = f(x)*f(y), Independent Variables.
+%     figure; 
+%     surf(x',y',FInit);
+%     CDF = histogram2(xInit,yInit,nX,'Normalization', 'cdf'); % Find the CDF
+%     CDF = CDF.Values;
+%     figure;
+%     surf(x',y',CDF); xlabel('x'); ylabel('y'); zlabel('F(x,y)');
+% 
+%     [gridx,gridy] = meshgrid(rand(N,1),rand(N,1)); % find interpolation mesh
+%     [xmesh, ymesh] = meshgrid(-4:.1:4,-4:.1:4);
+%     X = interp2(CDF,gridx,gridy,'nearest');
+
+
 

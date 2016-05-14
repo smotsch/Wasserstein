@@ -42,7 +42,7 @@
         indexDivision = logical( (oneMrho>0).*(coin_M<dt*abs(oneMrho)) );
         %% 3) update
         if (length(indexDivision)>0)
-            X_new = X(indexDivision,:);
+            X_new = X(indexDivision,:,:);
         end
         if (length(indexKill)>0)
             X(indexKill,:) = [];
