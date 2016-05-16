@@ -6,7 +6,7 @@ function X = BirthDeath(X,Interpolation,dt)
 % Author: Shane Lubold (shane.lubold@asu.edu)
 
 oneMrho = 1-Interpolation;               % 1-M at X(k) 
-coin_M = randn(length(X),1);
+coin_M = randn(length(X),2);
 
 indexKill = logical( (oneMrho<0).*(coin_M<dt*abs(oneMrho)) );
 indexDivision = logical( (oneMrho>0).*(coin_M<dt*abs(oneMrho)) );

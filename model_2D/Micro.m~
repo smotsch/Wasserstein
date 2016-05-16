@@ -30,8 +30,8 @@
     
     for j = 2:floor(T/dt + .5)
         %  Move
-        M = length(X);
-        X = X + sqrt(2*D)*sqrt(dt)*randn(M,2); 
+        
+        X = X + sqrt(2*D)*sqrt(dt)*randn(N,2); 
             
         % Histogram
         rho(:,:,j) = hist3(X,[length(x) length(y)]);   
@@ -39,21 +39,16 @@
         
         %% 2) Birth/Death Process  
         oneMrho = 1-rho_at_X;               % 1-M at X(k) 
-        coin_M = rand(length(X),1);
+        coin_M = rand(length(X),2);
 
-        indexKill1 = logical( (oneMrho(:,1)<0).*(coin_M<dt*abs(oneMrho(:,1))));
-        indexKill2 = logical( (oneMrho(:,2)<0).*(coin_M<dt*abs(oneMrho(:,2))));
-        indexKill = logical(indexKill1 .* indexKill2);
-        indexDivision1 = logical( (oneMrho(:,1)>0).*(coin_M<dt*abs(oneMrho(:,1))) );
-        indexDivision2 = logical( (oneMrho(:,2)>0).*(coin_M<dt*abs(oneMrho(:,2))) );
-        indexDivision = logical(indexDivision1 .* indexDivision2);
-        
-        X_new = X([indexDivision, indexDivision]);
-        if (~isempty(find(indexKill)))
-            X(indexKill, indexKill) = [];
-        end
+        indexKill = logical( (oneMrho<0).*(coin_M<dt*abs(oneMrho)));
+        indexDivision = logical( (oneMrho>0).*(coin_M<dt*abs(oneMrho)) );
+
+        X_new = X(indexDivision);
+        X(indexKill) = [];
 
         X = [X; X_new'];
+        X(isnan(X)) = [];
        
     end
 %  end
