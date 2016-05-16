@@ -12,7 +12,7 @@ clc; clear all; close all;
     x = -4:dx:3;
     y = -4:dy:4;
     D = 1;
-    N = 10000;
+    N = 1000;
     
     
     mu1 = 1;
@@ -26,7 +26,7 @@ clc; clear all; close all;
     % Call Micro, Macro
     rhoMicro = Micro(x,y,xInit,yInit,D,dt,T,N); 
     rhoMacro = Macro(x,y,D,dt,T,mu1,mu2,var1,var2);
-    
+
     subplot(2,2,1); surf(x,y,rhoMicro(:,:,1)'); colorbar;
     xlabel('x'); ylabel('y'); title('Micro, Initial');
     subplot(2,2,2); surf(x,y,rhoMacro(:,:,1)'); colorbar;
