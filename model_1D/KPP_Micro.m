@@ -1,4 +1,4 @@
-  function [rho,X] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
+%   function [rho,X] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
 % 
 % Solve the KPP equation as a particle system:
 %    dX_t = σdB_t
@@ -50,8 +50,9 @@
         if (length(indexDivision)>0)
             X = [X; X_new];
         end
+        save(k) = {X};
     end
     %-------------------------------------------%
     %-------------------------------------------%
- end
+%  end
 

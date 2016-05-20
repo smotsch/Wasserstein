@@ -13,47 +13,57 @@
 % 
 
     clc; clear all; close all;
-    
-    x = linspace(-2,2,10);
-    y = linspace(-2,2,10);
-    xInit = normpdf(x,0,1);
-    yInit = normpdf(y,0,1);
-    N = 25;
-    T = 1;
+    dx = .1;
+    dy = .1;
     dt = .1;
-    D =1 ;
-       
-    X = interp2(rand(N,2),[xInit ; yInit]);  
-    rho(:,:,1) =  hist3(X,[length(x),length(y)]);
-    rho(:,:,1) = rho(:,:,1)./(sum(sum(rho(:,:,1))));
-
+    x = -3:dx:3;
+    y = -3:dy:3;
+    N = 10;
+    T = 0:dt:50;
+    nT = floor(T(end)/dt + .5);
+    dt = .1;
+    D = 1;
+    [xmesh,ymesh] = meshgrid(x,y);
+    rho = zeros(numel(x),numel(y),nT);
     
-    for j = 2:floor(T/dt + .5)
+    X = [rand(N,1), rand(N,1)];
+    rho(:,:,1) = hist3(X,[numel(x),numel(y)]);
+   
+    for j = 2:nT
         %  Move
         M = length(X);
         X = X + sqrt(2*D)*sqrt(dt)*randn(M,2); 
             
         % Histogram
-        rho(:,:,j) = hist3(X,[length(x) length(y)]);   
-        rho_at_X = interp2(X,rho(:,:,j)); % interpolate at x_i, coming from Brownian paths.
+        rho(:,:,j) = hist3(X,[numel(x),numel(y)]);   
+        rho_at_X = interp2(xmesh,ymesh,rho(:,:,j),X(:,1),X(:,2)); % interpolate at x_i, coming from Brownian paths.
         
         %% 2) Birth/Death Process  
         oneMrho = 1-rho_at_X;               % 1-M at X(k) 
-        coin_M = rand(length(X),1);
-
-        indexKill1 = logical( (oneMrho(:,1)<0).*(coin_M<dt*abs(oneMrho(:,1))));
-        indexKill2 = logical( (oneMrho(:,2)<0).*(coin_M<dt*abs(oneMrho(:,2))));
-        indexKill = logical(indexKill1 .* indexKill2);
-        indexDivision1 = logical( (oneMrho(:,1)>0).*(coin_M<dt*abs(oneMrho(:,1))) );
-        indexDivision2 = logical( (oneMrho(:,2)>0).*(coin_M<dt*abs(oneMrho(:,2))) );
-        indexDivision = logical(indexDivision1 .* indexDivision2);
+        coin_M = rand(M,1);
         
-        X_new = X([indexDivision, indexDivision]);
-        if (~isempty(find(indexKill)))
-            X(indexKill, indexKill) = [];
+        indexKill = logical( (oneMrho<0).*(coin_M<dt*abs(oneMrho))); 
+        indexDivision = logical( (oneMrho>0).*(coin_M<dt*abs(oneMrho)) );
+
+        if (length(indexDivision)>0) % New Cells
+            X_new = X(indexDivision,:);
+        end
+         
+        if (length(indexKill)>0)
+            X(indexKill,:) = [];
         end
 
-        X = [X; X_new'];
-       
+        if (length(indexDivision)>0)
+            X = [X; X_new];
+        end
+    
     end
+    
+    figure;
+    for j = 1:nT
+        surf(rho(:,:,j)); grid on;
+        xlabel('x'); ylabel('y'); zlabel('f(x,y)');
+        pause(.1);
+    end
+   
 %  end
