@@ -42,8 +42,8 @@ switch response
 
     case '3D'
 
-        Xpos = randn(4,3); % Starting points
-        Ypos = randn(4,3) + ones(4,1)*[5 0 1]; % Ending points
+        Xpos = randn(5,3); % Starting points
+        Ypos = randn(5,3) + ones(5,1)*[5 0 1]; % Ending points
         nX = length(Xpos(:,1));
         nY = length(Ypos(:,1));
              

@@ -5,16 +5,20 @@
 
 clc; clear; close all;
 
+% DeltaX = [2 1 .5 .25 .0125];
+% BigT = [10 10^2 10^3 10^4 10^5]
+% for m = 1:length(DeltaX)
+
 %% Parameter model
 D  = 1;                                % noive level
 sigma = sqrt(2*D);
 l0  = .2;                                % radius Initial condition
-num = [10^4];                          % number particles
+num = 10^3;                          % number particles
 a   = -5;                              % lower bound on grid
 b   = 5;                               % upper bound on grid
-dx1 =.05;                                % meshsize for micro
+dx1 = .25;                                % meshsize for micro
 dx3 = .1;                             % meshsize for Hist for rhoMicro
-dx2 =.05;                                % meshsize for macro
+dx2 =.25;                                % meshsize for macro
 intX = a:dx1:b;                        % physical discretization
 dt = .01;                              % delta t
 T =  0:dt:1;                           % time vector
@@ -45,13 +49,14 @@ for i = 1:length(num)
               WD_discreet(j)= WD_discreet_cont(X,intX,rhoMacro(:,j));
 %             [WDHist(j)] = WDFinal(HistCDF,MacroCDF,intXHist,intXMacro);
 %             [WDParticle(j),pCombined,FINV,GINV] = WDFinal(StepCDF,MacroCDF,FINALX{j},intXMacro);
-%            [Vel1(i,j), Vel2(i,j),xLoc1(j),xLoc2(j)] = CalculateVelocity(T,rhoMacro(:,j),rhoMicro(:,j),intX,xLoc1(j-1),xLoc2(j-1));
+%              [Vel1(i,j), Vel2(i,j),xLoc1(j),xLoc2(j)] = CalculateVelocity(T,rhoMacro(:,j),rhoMicro(:,j),intX,xLoc1(j-1),xLoc2(j-1));
 %             plot(abs(FINV(:,j)-GINV(:,j))); grid on; hold on;
       end
      toc
      hold off;
 end
-toc
+% toc
+
 
 % figure; plot(Vel1(2:end),'k--'); grid on; 
 % figure; plot(Vel2(2:end),'r--'); grid on; 
@@ -60,6 +65,31 @@ toc
 % 
 % [WDStepCompare(k), WDHistCompare(k)] = CombinedWDCalculator(FINALX{j},intX,rhoMicro(:,1),rhoMicro(:,1),dx1);
 % end
-
+% WD_contFinal(m) = (WD_cont(end));
+% LogWD_contFinal(m) = log(WD_cont(end));
+% end
+% 
+% % fun = @(x,xdata) x(1).*(1./xdata).^(x(2));
+% % x0 = [.3,1];
+% % times = linspace(BigT(1),BigT(end));
+% % fit = lsqcurvefit(fun,x0,BigT,WD_contFinal);
+% 
+% fit = polyfit(DeltaX,WD_contFinal,1);
+% yfit = fit(2) + fit(1)*DeltaX;
+% 
+% 
+% plot(DeltaX,WD_contFinal,'ko'); hold on; plot(DeltaX,yfit,'k-')
+% leg = legend('Data','Fitted Model'); grid on;
+% set(leg,'position',[.2 .57 .3 .3])
+% xlabel('\Delta x'); ylabel('WD'); title('WD vs. \Delta x');
+% 
+% 
+% 
+% Fit = polyfit(BigT,WD_contFinal,2);
+% Fit = polyval(Fit,BigT);
+% FitLog = polyfit(BigT,LogWD_contFinal,1);
+% figure; plot(BigT,WD_contFinal); grid on;
+% hold on; plot(BigT,Fit); hold off;
+% xlabel('N'); ylabel('WD');
 
 
