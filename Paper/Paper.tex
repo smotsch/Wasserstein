@@ -24,6 +24,8 @@
 \usepackage{dcolumn}
 \newcolumntype{2}{D{.}{}{2.0}}
 \usepackage{subfig}
+\usepackage{mwe}
+
 
 \usepackage[utf8]{inputenc}
 
@@ -251,22 +253,15 @@ This section applies the tools from previous sections to quantify the difference
 \subsection{One Dimensional Case}
 For illustration, we begin by examining the growth of cancer cells. To model such a phenomenon on a macroscopic level, we study the model
 \begin{equation}
-\frac{\partial \rho}{\partial t}  = \frac{\sigma^2}{2}\frac{\partial^2 \rho}{\partial^2 u},
+\frac{\partial \rho}{\partial t}  = \frac{\sigma^2}{2}\frac{\partial^2 \rho}{\partial^2 x} + \rho(1-\rho),
 \label{eq: MacroModel}
 \end{equation}
-where $\rho(x,t)$ denotes the density of cancer cell at time $t$ and a location $x$. The solution to ($\ref{eq: MacroModel}$) is the well-known Gaussian and is given by
-
-\begin{equation*}
-Macro_\rho(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp\Big(\frac{-(x-\mu)^2}{2\sigma^2}\Big)
-\end{equation*}
-
-
-\noindent For our micro-model, we consider the model given by
+where $\sigma$ is a scalar and $\rho(x,t)$ denotes the density of cancer cell at time $t$ and a location $x$. For the micro-model, we consider the equation
 \begin{equation}
 dX_t = \sigma dB_t,
 \label{eq: MicroModel}
 \end{equation}
-where $B_t$ denotes a standard Brownian motion, with $B(0) = 0$. In order to compare our micro-model to the macro-model, we approximate (\ref{eq: MicroModel}). For $\Delta t > 0$, we have
+where $B_t$ denotes a standard Brownian process, with $B(0) = 0$. For $\Delta t > 0$, we have
 \begin{equation}
 \int_0^{\Delta t} \ dX_t = \sigma \int_{0}^{\Delta t} \ dB_t \implies x_{\Delta t} - x_0 = \sigma \textbf{Z}
 \end{equation}
@@ -294,43 +289,39 @@ where $\textbf{W} \sim \mathcal{N}(0, 1)$. To compute $Micro_{\rho}$, $N \in \ma
 \label{fig:test}
 \end{figure}
 
-\noindent Using a standard normal PDF as the initial condition for $Macro_{\rho}$, and $\Delta x = .05$, we see in Figures \ref{fig:FittingError} and \ref{fig: FittingLogError} the decay of WD and log(WD) against number of particles, respectively.  All WD reported are at $T_{final} = 1, \ \Delta t = .01.$
+\noindent Using a standard normal PDF as the initial condition for $Macro_{\rho}$, and $\Delta x = .05$, we see in Figures \ref{fig:FittingError} and \ref{fig: FittingLogError} the decay of WD and log(WD) against number of particles, respectively. Figure \ref{fig: WDVsX} shows that WD decays linearly a $\Delta x$ decreases.  All WD reported are at $T_{final} = 1, \ \Delta t = .01.$
 
-\begin{figure}[H]
+\begin{figure}
+\begin{subfigure}{.5\linewidth}
 \centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{WDVSN1D.jpg}
-  \caption{Fit WD and N}
-  \label{fig:FittingError}
+\includegraphics[scale = .4]{WDVSN1D.jpg}
+\caption{Fitting WD to N}
+\label{fig:FittingError}
 \end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{LogWDVSN1D.jpg}
-  \caption{Fit Log(WD) and Log(N)}
-  \label{fig: FittingLogError}
+\begin{subfigure}{.5\linewidth}
+\centering
+\includegraphics[scale = .4]{LogWDVSN1D.jpg}
+\caption{Fitting Log(WD) to Log(N)}
+\label{fig: FittingLogError}
+\end{subfigure}\\[1ex]
+\begin{subfigure}{\linewidth}
+\centering
+\includegraphics[scale = .4]{WDVSDX.jpg}
+\caption{Fitting WD to $\Delta x$}
+\label{fig: WDVsX}
 \end{subfigure}
-\caption{Decay of WD with N}
+\caption{One Dimensional WD Computations}
 \label{fig:test}
 \end{figure}
 
-\noindent We now explore how changing $\Delta x$, for a fixed $N$, changes the WD. 
-
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale = .4]{WDVSDX.jpg}
-\end{center}
-\caption{WD vs $\Delta x$.}
-\end{figure}
 
 \noindent We conclude from Figure \ref{fig:FittingError}  that the error between Macro$_\rho$ and Micro$_\rho$ follows the relationship 
 \begin{equation*}
-\Big|W^2_2\Big(Macro_\rho, Micro_\rho\Big)\Big| \approx C\Big({\frac{1}{N}}\Big)^{\alpha},
+\Big|W_2\Big(Macro_\rho, Micro_\rho\Big)\Big| \approx C\Big({\frac{1}{N}}\Big)^{\alpha},
 \end{equation*}
- where $C \approx 3.33, \ \alpha \approx 0.44 $. When computing the linear fit  $log(WD) = a\times log(N) + b$, we find $a \approx -.41,  b \approx .53$. We thus conjecture that the Wasserstein distance between Micro$_\rho$ and Macro$_\rho$ decays at a rate of $1/\sqrt{N}$.
+ where $C \approx 3.33, \ \alpha \approx 0.44 $. When computing the fit $log(WD) = a\times log(N) + b$, we find $a \approx -.41,  b \approx .53$. We thus conjecture that the Wasserstein distance between Micro$_\rho$ and Macro$_\rho$ decays at a rate of $1/\sqrt{N}$.
 \begin{theorem}
-$\Big|W^2_2\Big(Macro_\rho, Micro_\rho\Big)\Big| \approx C\sqrt{\frac{1}{N}}$, for some $C \in \mathbb{R}$.
+$\Big|W_2\Big(Macro_\rho, Micro_\rho\Big)\Big| \approx C\sqrt{\frac{1}{N}}$, for some $C \in \mathbb{R}$.
 \end{theorem}
 \begin{proof}
 Denote Macro$_\rho$ by $\rho_{mi}$, Micro$_\rho$ by $\rho_{ma}$. Then, for some $\phi \in C_b(\mathbb{R})$
@@ -344,15 +335,49 @@ By the Law of Large Numbers,
 where $\text{std}(\phi(x))$ denotes the standard deviation of $\phi$.
 \end{proof}
 
-\noindent We now consider a model with a source term, meaning the macro-level model is given by
+Figures \ref{fig: MicroVel} and \ref{fig: MacroVel} plot the respective velocities of $Micro_{\rho}, Macro_{\rho}$. To find the velocity between functions $f_1, f_2$ at time $t_j$, we set a value of $c = .1$, then find $x_{j+1} = f_{2}^{-1}(c),  x_{j} = f_{1}^{-1}(c)$. Then, the velocity at time $j$ is $v(j) = \frac{x_{j+1}- x_{j}}{\Delta t}$. Clearly, the velocity of $Micro_{\rho} \approx 1.38 \times 10^2$ is a random variable, while the velocity of $Macro_{\rho}\approx 1.5 \times 10^2$ is deterministic. 
 
-\begin{equation}
-\frac{\partial \rho}{\partial t}  = \frac{\sigma^2}{2}\frac{\partial^2 \rho}{\partial^2 u} + \rho(1-\rho),
-\label{eq: MacroModel2}
-\end{equation}
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{1DMicroVelocity.jpg}
+  \caption{Fitting Micro$_{\rho}$ velocity}
+  \label{fig: MicroVel}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{1DMacroVelocity.jpg}
+  \caption{Fitting Macro$_{\rho}$ velocity}
+  \label{fig: MacroVel}
+\end{subfigure}
+\caption{Velocities, $T_{final} = 1, \Delta t = .01, N = 10^4, \sigma = \sqrt{2}.$}
+\label{fig:test}
+\end{figure}
 
-To calculate $\rho$Micro, $N$ realizations of (\ref{eq: BrownianEQ}) are computed. At each time-step, a new particle is created with probability $\Delta t(1-\rho)$ and destroyed with probability . A histogram ($Micro_{\rho}$) is then 
-computed over the physical domain. 
+We now investigate how the ratio $\frac{N}{\Delta x}$ impacts the WD. We consider the cases when $(N, \ \Delta x) = (10, 1), \ (10^2, .5), \ (10^3, .125), \ (10^4, .0625).$ For each case, $1,000$ i.i.id realizations of (\ref{eq: MicroModel}) are run. The WD between $Macro_{\rho}$ and $Micro_{\rho}$ at $T_{final = 1},\ \Delta t = .01$ is computed, and then the max of these WD values is computed. We plot the corresponding max WD and pairings of $(N, \ \Delta x)$ in Figures \ref{fig: FittingWDNDX} and \ref{fig: FittingLogWDNDX}.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{WDVSNDX.jpg}
+  \caption{Fitting WD to $\frac{N}{\Delta x}$}
+  \label{fig: FittingWDNDX}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{LogWDVSNDX.jpg}
+  \caption{Fitting Log(WD) to $Log(\frac{N}{\Delta x})$}
+  \label{fig: FittingLogWDNDX}
+\end{subfigure}
+\caption{One Dimensional WD Computations}
+\label{fig:test}
+\end{figure}
+ 
+
+
+
 
 \subsection{Two Dimensional Case}
 
@@ -366,7 +391,28 @@ where $\rho(t,x,y)$ denotes the density of cancer cell at time $t$ at location $
 dX_t = \sigma dB_t,
 \label{eq: MicroModel2}
 \end{equation}
-where $B_t$ denotes a standard Brownian motion in 2 dimensions, with $B(0) = (0,0)$. 
+where $B_t$ denotes a standard Brownian motion in 2 dimensions, with $B(0) = (0,0)$.  Figures \ref{fig:Fitting2DMicroVelocity} and \ref{fig: Fitting2DMacroVelocity}
+plot the respective velocities of $Micro_{\rho}, Macro_{\rho}$.  Clearly, the velocity of $Micro_{\rho} \approx $ is a random variable, while the velocity of $Macro_{\rho}\approx 1.5 \times 10^2$ is deterministic. 
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{WDVSNDX.jpg}
+  \caption{Fitting WD to $\frac{N}{\Delta x}$}
+  \label{fig:Fitting2DMicroVelocity}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{2DMacroVelocity.jpg}
+  \caption{Fitting Log(WD) to $Log(\frac{N}{\Delta x})$}
+  \label{fig: Fitting2DMacroVelocity}
+\end{subfigure}
+\caption{2D Velocities, $T_{final} = 1, \Delta t = .01, N = 10^3, \sigma = \sqrt{2}.$}
+\label{fig:test}
+\end{figure}
+
 
 
 \section{Conclusion}

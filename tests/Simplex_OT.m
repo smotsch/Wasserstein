@@ -70,6 +70,7 @@ for k=1:nY
         A(k+nX, k + (k2-1)*nY) = 1;
     end
 end
+
 % We have an extra constraint (last equality is automatically satisfied)
 A(end,:) = [];
 b(end)   = [];

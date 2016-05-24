@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  22 MAY 2016 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  24 MAY 2016 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -283,6 +283,55 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 \sf@top=\skip64
 \sf@bottom=\skip65
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/mwe/mwe.sty
+Package: mwe 2012/05/15 v0.3 Package to support minimal working examples (MWE)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count116
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count117
+\c@Blindtext=\count118
+\c@blind@countparstart=\count119
+\blind@countxx=\count120
+\blindtext@numBlindtext=\count121
+\blind@countyy=\count122
+\c@blindlist=\count123
+\c@blindlistlevel=\count124
+\c@blindlist@level=\count125
+\blind@listitem=\count126
+\c@blind@listcount=\count127
+\c@blind@levelcount=\count128
+\blind@mathformula=\count129
+\blind@Mathformula=\count130
+\c@blind@randomcount=\count131
+\c@blind@randommax=\count132
+\c@blind@pangramcount=\count133
+\c@blind@pangrammax=\count134
+))
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks33
@@ -500,7 +549,7 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-\c@shadethm=\count116
+\c@shadethm=\count135
  (./Paper.aux
 
 LaTeX Warning: Label `fig:1DWDCalculations' multiply defined.
@@ -508,21 +557,30 @@ LaTeX Warning: Label `fig:1DWDCalculations' multiply defined.
 
 LaTeX Warning: Label `fig:test' multiply defined.
 
+
+LaTeX Warning: Label `fig:test' multiply defined.
+
+
+LaTeX Warning: Label `fig:test' multiply defined.
+
+
+LaTeX Warning: Label `fig:test' multiply defined.
+
 )
 \openout1 = `Paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -560,32 +618,22 @@ LaTeX Font Info:    ... okay on input line 51.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen139
+\scratchcounter=\count136
+\scratchdimen=\dimen141
 \scratchbox=\box31
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\nofMPsegments=\count137
+\nofMParguments=\count138
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen140
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen142
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
 \everyMPtoPDFconversion=\toks36
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: pdftex.def on input line 91.
-)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+ (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
@@ -621,7 +669,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
@@ -629,23 +677,17 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\Gin@req@height=\dimen141
-\Gin@req@width=\dimen142
-)
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: subfig package v1.3 is loaded.
-Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+LaTeX Font Info:    Try loading font information for U+msa on input line 54.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 52.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 54.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -655,138 +697,178 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 <2ndPPercentile.pdf, id=27, 466.7617pt x 379.36067pt>
 File: 2ndPPercentile.pdf Graphic file (type pdf)
  <use 2ndPPercentile.pdf>
-Package pdftex.def Info: 2ndPPercentile.pdf used on input line 140.
+Package pdftex.def Info: 2ndPPercentile.pdf used on input line 142.
 (pdftex.def)             Requested size: 186.70137pt x 151.74158pt.
 
 [3 <./2ndPPercentile.pdf>] <1st1DWD.pdf, id=47, 488.65894pt x 384.05392pt>
 File: 1st1DWD.pdf Graphic file (type pdf)
 
 <use 1st1DWD.pdf>
-Package pdftex.def Info: 1st1DWD.pdf used on input line 183.
+Package pdftex.def Info: 1st1DWD.pdf used on input line 185.
 (pdftex.def)             Requested size: 239.44496pt x 188.18806pt.
 
-Overfull \hbox (4.56746pt too wide) in paragraph at lines 183--184
+Overfull \hbox (4.56746pt too wide) in paragraph at lines 185--186
  [][] 
  []
 
 <2nd1DWD.pdf, id=48, 493.5045pt x 388.94118pt>
 File: 2nd1DWD.pdf Graphic file (type pdf)
  <use 2nd1DWD.pdf>
-Package pdftex.def Info: 2nd1DWD.pdf used on input line 189.
+Package pdftex.def Info: 2nd1DWD.pdf used on input line 191.
 (pdftex.def)             Requested size: 246.75165pt x 194.47011pt.
 
-Overfull \hbox (11.87415pt too wide) in paragraph at lines 189--190
+Overfull \hbox (11.87415pt too wide) in paragraph at lines 191--192
  [][] 
  []
 
 <2DPoints.jpg, id=49, 562.1pt x 421.575pt>
 File: 2DPoints.jpg Graphic file (type jpg)
  <use 2DPoints.jpg>
-Package pdftex.def Info: 2DPoints.jpg used on input line 227.
+Package pdftex.def Info: 2DPoints.jpg used on input line 229.
 (pdftex.def)             Requested size: 224.83601pt x 168.627pt.
 
-Overfull \hbox (13.4477pt too wide) in paragraph at lines 227--228
+Overfull \hbox (13.4477pt too wide) in paragraph at lines 229--230
  [][] 
  []
 
 <2DGaussians.jpg, id=50, 562.1pt x 421.575pt>
 File: 2DGaussians.jpg Graphic file (type jpg)
  <use 2DGaussians.jpg>
-Package pdftex.def Info: 2DGaussians.jpg used on input line 233.
+Package pdftex.def Info: 2DGaussians.jpg used on input line 235.
 (pdftex.def)             Requested size: 224.83601pt x 168.627pt.
 
-Overfull \hbox (13.4477pt too wide) in paragraph at lines 233--234
+Overfull \hbox (13.4477pt too wide) in paragraph at lines 235--236
  [][] 
  []
 
-[4 <./1st1DWD.pdf> <./2nd1DWD.pdf>] [5 <./2DPoints.jpg> <./2DGaussians.jpg>]
-<InitialDistributions.jpg, id=85, 562.1pt x 421.575pt>
+[4 <./1st1DWD.pdf> <./2nd1DWD.pdf>]
+<InitialDistributions.jpg, id=82, 562.1pt x 421.575pt>
 File: InitialDistributions.jpg Graphic file (type jpg)
 
 <use InitialDistributions.jpg>
-Package pdftex.def Info: InitialDistributions.jpg used on input line 283.
+Package pdftex.def Info: InitialDistributions.jpg used on input line 278.
 (pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
 
-<FinalDistribution.jpg, id=86, 562.1pt x 421.575pt>
+<FinalDistribution.jpg, id=83, 562.1pt x 421.575pt>
 File: FinalDistribution.jpg Graphic file (type jpg)
 
 <use FinalDistribution.jpg>
-Package pdftex.def Info: FinalDistribution.jpg used on input line 289.
+Package pdftex.def Info: FinalDistribution.jpg used on input line 284.
 (pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
- <WDVSN1D.jpg, id=87, 562.1pt x 421.575pt>
+ [5 <./2DPoints.jpg> <./2DGaussians.jpg>]
+<WDVSN1D.jpg, id=87, 562.1pt x 421.575pt>
 File: WDVSN1D.jpg Graphic file (type jpg)
-
-<use WDVSN1D.jpg>
-Package pdftex.def Info: WDVSN1D.jpg used on input line 303.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
- <LogWDVSN1D.jpg, id=88, 562.1pt x 421.575pt>
-File: LogWDVSN1D.jpg Graphic file (type jpg)
-
-<use LogWDVSN1D.jpg>
-Package pdftex.def Info: LogWDVSN1D.jpg used on input line 309.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
- <WDVSDX.jpg, id=89, 562.1pt x 421.575pt>
-File: WDVSDX.jpg Graphic file (type jpg)
- <use WDVSDX.jpg>
-Package pdftex.def Info: WDVSDX.jpg used on input line 322.
+ <use WDVSN1D.jpg>
+Package pdftex.def Info: WDVSN1D.jpg used on input line 297.
 (pdftex.def)             Requested size: 224.83601pt x 168.627pt.
 
-[6 <./InitialDistributions.jpg> <./FinalDistribution.jpg> <./WDVSN1D.jpg> <./Lo
-gWDVSN1D.jpg>] [7 <./WDVSDX.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 377.
+<LogWDVSN1D.jpg, id=88, 562.1pt x 421.575pt>
+File: LogWDVSN1D.jpg Graphic file (type jpg)
+ <use LogWDVSN1D.jpg>
+Package pdftex.def Info: LogWDVSN1D.jpg used on input line 303.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+
+<WDVSDX.jpg, id=89, 562.1pt x 421.575pt>
+File: WDVSDX.jpg Graphic file (type jpg)
+ <use WDVSDX.jpg>
+Package pdftex.def Info: WDVSDX.jpg used on input line 309.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+
+<1DMicroVelocity.jpg, id=90, 562.1pt x 421.575pt>
+File: 1DMicroVelocity.jpg Graphic file (type jpg)
+ <use 1DMicroVelocity.jpg>
+Package pdftex.def Info: 1DMicroVelocity.jpg used on input line 344.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+
+<1DMacroVelocity.jpg, id=91, 562.1pt x 421.575pt>
+File: 1DMacroVelocity.jpg Graphic file (type jpg)
+ <use 1DMacroVelocity.jpg>
+Package pdftex.def Info: 1DMacroVelocity.jpg used on input line 350.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+
+<WDVSNDX.jpg, id=92, 562.1pt x 421.575pt>
+File: WDVSNDX.jpg Graphic file (type jpg)
+ <use WDVSNDX.jpg>
+Package pdftex.def Info: WDVSNDX.jpg used on input line 364.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+
+<LogWDVSNDX.jpg, id=93, 562.1pt x 421.575pt>
+File: LogWDVSNDX.jpg Graphic file (type jpg)
+ <use LogWDVSNDX.jpg>
+Package pdftex.def Info: LogWDVSNDX.jpg used on input line 370.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+ [6 <./InitialDistributions.jpg> <./FinalDistribution.jpg>] [7 <./WDVSN1D.jpg> 
+<./LogWDVSN1D.jpg> <./WDVSDX.jpg> <./1DMicroVelocity.jpg> <./1DMacroVelocity.jp
+g>]
+File: WDVSNDX.jpg Graphic file (type jpg)
+
+<use WDVSNDX.jpg>
+Package pdftex.def Info: WDVSNDX.jpg used on input line 402.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+ <2DMacroVelocity.jpg, id=104, 562.1pt x 421.575pt>
+File: 2DMacroVelocity.jpg Graphic file (type jpg)
+
+<use 2DMacroVelocity.jpg>
+Package pdftex.def Info: 2DMacroVelocity.jpg used on input line 408.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 423.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 377.
-
-Underfull \hbox (badness 4634) in paragraph at lines 391--392
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 423.
+ [8 <./WDVSNDX.jpg> <./LogWDVSNDX.jpg> <./2DMacroVelocity.jpg>]
+Underfull \hbox (badness 4634) in paragraph at lines 437--438
 []\OT1/cmr/m/n/10 Villani, C., Op-ti-mal trans-port, old and new, June 13, 2008
 , http://cedricvillani.org/wp-
  []
 
-[8] (./Paper.aux)
+[9] (./Paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6117 strings out of 493117
- 89454 string characters out of 6135433
- 174724 words of memory out of 5000000
- 9435 multiletter control sequences out of 15000+600000
+ 6516 strings out of 493117
+ 95464 string characters out of 6135433
+ 266258 words of memory out of 5000000
+ 9814 multiletter control sequences out of 15000+600000
  14754 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,11n,38p,998b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,38p,998b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
 usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on Paper.pdf (8 pages, 761533 bytes).
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2014/texmf-dist
+/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on Paper.pdf (9 pages, 912328 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 199 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

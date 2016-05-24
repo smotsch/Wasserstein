@@ -9,16 +9,31 @@ clc; clear; close all;
 % BigT = [10 10^2 10^3 10^4 10^5]
 % for m = 1:length(DeltaX)
 
+
+num = [5 10 10^2 10^3 10^4]; 
+dx = [2 1 .5 .25 .125]; % number particles
+
+
+for i = 1:length(num)
+    a   = -5;                              % lower bound on grid
+b   = 5; 
+    dx1 = dx(i);
+    intX = a:dx1:b; 
+    IC = normpdf(intX,0,1) ;
+    D  = 1;  
+    dt = .01;
+    T =  0:dt:1;  
+    rhoMacro  = KPP_Macro(IC,intX,D,dt,T,2);
+    for k = 1:1000
 %% Parameter model
 D  = 1;                                % noive level
 sigma = sqrt(2*D);
 l0  = .2;                                % radius Initial condition
-num = 10^3;                          % number particles
 a   = -5;                              % lower bound on grid
 b   = 5;                               % upper bound on grid
-dx1 = .25;                                % meshsize for micro
+dx1 = dx(i);                                % meshsize for micro
 dx3 = .1;                             % meshsize for Hist for rhoMicro
-dx2 =.25;                                % meshsize for macro
+dx2 =dx1;                                % meshsize for macro
 intX = a:dx1:b;                        % physical discretization
 dt = .01;                              % delta t
 T =  0:dt:1;                           % time vector
@@ -26,36 +41,34 @@ IC = normpdf(intX,0,1) ;                               %  Initial condition
 
 %% Solve  Macro
 % rhoMacro1 = MacroFinal(intX,dx2,T,dt,sigma,a,b,l0);
-tic
-rhoMacro  = KPP_Macro(IC,intX,D,dt,T,2);
-toc
+
+
 %% Solve  Micro
-tic
+
 xLoc1(1) = 0; xLoc2(1) = 0;             % Initialize position vectors
 
-for i = 1:length(num)
+
     %[rhoMicro,FINALX] = MicroFinalFast(IC,intX,D,dt,T,2);
     [rhoMicro,X] = KPP_Micro(IC,intX,D,dt,T,num(i));
     tic
-      for j = 2:length(T)
+%       for j = 2:length(T)
 %           plot(intX,rhoMacro(:,j),'ko',intX,rhoMicro(:,j),'g'); 
 %           legend('Macro','Micro'); grid on;   axis([a b 0 1]);
 %           pause(.01);
         
+              WD_cont(i,k) = WD_Cont(rhoMicro(:,end),rhoMacro(:,end),intX);
+%               WD_discreet(j)= WD_discreet_cont(X,intX,rhoMacro(:,end));
+%              xLoc1(j) = CalculateVelocity(rhoMicro(:,j),intX,xLoc1(j-1));
+%              plot(abs(FINV(:,j)-GINV(:,j))); grid on; hold on;
+%       end
 
-%             [HistCDF,intXHist] = cdf_clean(intX,rhoMicro(:,j)');
-%             [MacroCDF,intXMacro] = cdf_clean(intX,rhoMacro(:,j)');
-              WD_cont(j) = WD_Cont(rhoMicro(:,j),rhoMacro(:,j),intX);
-              WD_discreet(j)= WD_discreet_cont(X,intX,rhoMacro(:,j));
-%             [WDHist(j)] = WDFinal(HistCDF,MacroCDF,intXHist,intXMacro);
-%             [WDParticle(j),pCombined,FINV,GINV] = WDFinal(StepCDF,MacroCDF,FINALX{j},intXMacro);
-%              [Vel1(i,j), Vel2(i,j),xLoc1(j),xLoc2(j)] = CalculateVelocity(T,rhoMacro(:,j),rhoMicro(:,j),intX,xLoc1(j-1),xLoc2(j-1));
-%             plot(abs(FINV(:,j)-GINV(:,j))); grid on; hold on;
-      end
-     toc
-     hold off;
-end
+
+   
+
+   close all;
+    end
 % toc
+end
 
 
 % figure; plot(Vel1(2:end),'k--'); grid on; 

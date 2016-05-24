@@ -36,7 +36,7 @@
     mu_g    = [2 3];
     Sigma_g = [.25 .3; .3 1];
     
-    [X1,X2] = meshgrid(linspace(-5,5,10)',linspace(-5,5,10)');
+    [X1,X2] = meshgrid(linspace(-5,5,5)',linspace(-5,5,5)');
     XMESH = [X1(:) X2(:)];
     f = mvnpdf(XMESH,mu_f,Sigma_f);
     g = mvnpdf(XMESH,mu_g,Sigma_g);
@@ -45,8 +45,8 @@
     f = f/FSUM; g = g/GSUM;
     
     figure; 
-    surf(X1,X2,reshape(f,10,10)); hold on
-    surf(X1,X2,reshape(g,10,10)); hold off;
+    surf(X1,X2,reshape(f,5,5)); hold on
+    surf(X1,X2,reshape(g,5,5)); hold off;
     
     Xpos = XMESH;
     Ypos = Xpos;

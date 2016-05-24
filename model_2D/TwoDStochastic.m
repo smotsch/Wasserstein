@@ -8,13 +8,13 @@ clc; clear all; close all;
     dx = .2;
     dy = .2;
     dt = .01;
-    T = 2;
+    T = 1;
     t = 0:dt:T;
     x = -4:dx:3;
     y = -4:dy:4;
     D = 50;
     N = 1000;
-    c = .0005; % threshold for computing contours.
+    c = .005; % threshold for computing contours.
     
     % Initial Conditiion for rhoMacro
     mu1 = 0;
@@ -23,7 +23,7 @@ clc; clear all; close all;
     var2 = 2;
     
     % Call Micro, Macro
-%     rhoMicro = Micro(x,y,xInit,yInit,D,dt,T,N); 
+    rhoMicro = Micro(x,y,D,dt,T,N); 
     rhoMacro = Macro(x,y,D,dt,T,mu1,mu2,var1,var2);
     
     % Compute Velocities

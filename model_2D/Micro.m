@@ -1,4 +1,4 @@
-%   function rho = Micro(x,y, xInit, yInit,D,dt,T,N)
+   function rho = Micro(x,y,D,dt,T,N)
 % 
 % Solve the KPP equation as a particle system:
 %    dX_t = σdB_t
@@ -59,11 +59,11 @@
     
     end
     
-    figure;
-    for j = 1:nT
-        surf(rho(:,:,j)); grid on;
-        xlabel('x'); ylabel('y'); zlabel('f(x,y)');
-        pause(.1);
-    end
+%     figure;
+%     for j = 1:nT
+%         surf(rho(:,:,j)); grid on;
+%         xlabel('x'); ylabel('y'); zlabel('f(x,y)');
+%         pause(.1);
+%     end
    
-%  end
+ end
