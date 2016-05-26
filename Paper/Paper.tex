@@ -121,9 +121,9 @@ It is also possible to show that $W_{j}$ defines a distance function on $\mathca
 \noindent For the remainder of the paper, we restict ourselves to $(M,d) = (\mathbb{R}^n, d)$, with $n \geq 1$ and $d$ being the standard metric on $\mathbb{R}^n$. 
 
 \section{One Dimensional Case} \label{sec: OneD}
-In one dimension, there exists a closed form solution to computing the Wasserstein distance between two probability density functions. Let $f, g: \mathbb{R} \rightarrow \mathbb{R}$ such that
+In one dimension, there exists a closed form solution to computing the Wasserstein distance between two probability density functions. Let $f, g: \mathbb{R} \rightarrow \mathbb{R}$ be functions such that
 \begin{equation}
-\int_{\mathbb{R}} f \ dx = \int_{\mathbb{R}} g \ dx.
+\int_{\mathbb{R}} f(x) \ dx = \int_{\mathbb{R}} g(x) \ dx.
 \end{equation}
 If we define
 \begin{equation}
@@ -182,17 +182,17 @@ One can think of (\ref{eq: 1DWD}) as moving the $j$-th percentile of $f$ to the 
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[scale = .49]{1st1DWD.pdf}
+  \includegraphics[scale = .4]{1st1DWD.pdf}
   \caption{Discrete Points, WD $\approx$ 1.7475}
   \label{fig: 1Ddiscreet}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[scale = .5]{2nd1DWD.pdf}
-  \caption{Continuous Functions, WD $\approx$ 2.236}
+  \includegraphics[scale = .4]{1DWDNormal.jpg}
+  \caption{Continuous Functions, WD $\approx$ 2.06}
   \label{fig: 1DContinuous}
 \end{subfigure}
-\caption{Computations of $W_2$ in one dimension}
+\caption{Computations of WD in one dimension}
 \label{fig:1DWDCalculations}
 \end{figure}
 
@@ -400,7 +400,7 @@ plot the respective velocities of $Micro_{\rho}, Macro_{\rho}$.  Clearly, the ve
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{WDVSNDX.jpg}
-  \caption{Fitting WD to $\frac{N}{\Delta x}$}
+  \caption{WRONG IMAGE HERE}
   \label{fig:Fitting2DMicroVelocity}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
@@ -449,5 +449,3 @@ Prokhorov, Yu. V., Convergence of random processes and limit theorems in probabi
 \end{thebibliography}
 
 \end{document}
-
-% - Release $Name:  $ -

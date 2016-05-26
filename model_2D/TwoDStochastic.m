@@ -7,20 +7,22 @@ clc; clear all; close all;
 
     dx = .2;
     dy = .2;
-    dt = .01;
+    dt = .1;
     T = 1;
     t = 0:dt:T;
-    x = -4:dx:3;
-    y = -4:dy:4;
-    D = 50;
-    N = 1000;
+    x = -1:dx:1;
+    y = -1:dy:1;
+%     x= linspace(-5,5,7);
+%     y = x;
+    D = 1;
+    N = 10^2;
     c = .005; % threshold for computing contours.
     
     % Initial Conditiion for rhoMacro
-    mu1 = 0;
-    mu2 = 0;
-    var1 = 2;
-    var2 = 2;
+    mu1 = -1;
+    mu2 = 3;
+    var1 = 1;
+    var2 = 3;
     
     % Call Micro, Macro
     rhoMicro = Micro(x,y,D,dt,T,N); 
@@ -34,11 +36,12 @@ clc; clear all; close all;
     Fit = polyfit(1:size(rhoMacro,3),distanceMacro./dt,1);
     figure; plot(Fit);
     xlabel('Time'); ylabel('Velocity');
-  
     
- 
-
-
+    %Compute the WD
+    [WD,Diff1,Diff2] = TwoDOptimizationCode(x,y,rhoMicro(:,:,end),...
+    rhoMacro(:,:,end))
+    
+  
 
 %     subplot(2,2,1); surf(x,y,rhoMicro(:,:,1)'); colorbar;
 %     xlabel('x'); ylabel('y'); title('Micro, Initial');

@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  24 MAY 2016 12:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  25 MAY 2016 23:49
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **Paper.tex
 (./Paper.tex
@@ -691,153 +690,144 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 54.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
-
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<2ndPPercentile.pdf, id=27, 466.7617pt x 379.36067pt>
-File: 2ndPPercentile.pdf Graphic file (type pdf)
- <use 2ndPPercentile.pdf>
-Package pdftex.def Info: 2ndPPercentile.pdf used on input line 142.
-(pdftex.def)             Requested size: 186.70137pt x 151.74158pt.
-
-[3 <./2ndPPercentile.pdf>] <1st1DWD.pdf, id=47, 488.65894pt x 384.05392pt>
-File: 1st1DWD.pdf Graphic file (type pdf)
-
-<use 1st1DWD.pdf>
-Package pdftex.def Info: 1st1DWD.pdf used on input line 185.
-(pdftex.def)             Requested size: 239.44496pt x 188.18806pt.
-
-Overfull \hbox (4.56746pt too wide) in paragraph at lines 185--186
- [][] 
- []
-
-<2nd1DWD.pdf, id=48, 493.5045pt x 388.94118pt>
-File: 2nd1DWD.pdf Graphic file (type pdf)
- <use 2nd1DWD.pdf>
-Package pdftex.def Info: 2nd1DWD.pdf used on input line 191.
-(pdftex.def)             Requested size: 246.75165pt x 194.47011pt.
-
-Overfull \hbox (11.87415pt too wide) in paragraph at lines 191--192
- [][] 
- []
-
-<2DPoints.jpg, id=49, 562.1pt x 421.575pt>
-File: 2DPoints.jpg Graphic file (type jpg)
- <use 2DPoints.jpg>
-Package pdftex.def Info: 2DPoints.jpg used on input line 229.
-(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
-
-Overfull \hbox (13.4477pt too wide) in paragraph at lines 229--230
- [][] 
- []
-
-<2DGaussians.jpg, id=50, 562.1pt x 421.575pt>
-File: 2DGaussians.jpg Graphic file (type jpg)
- <use 2DGaussians.jpg>
-Package pdftex.def Info: 2DGaussians.jpg used on input line 235.
-(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
-
-Overfull \hbox (13.4477pt too wide) in paragraph at lines 235--236
- [][] 
- []
-
-[4 <./1st1DWD.pdf> <./2nd1DWD.pdf>]
-<InitialDistributions.jpg, id=82, 562.1pt x 421.575pt>
-File: InitialDistributions.jpg Graphic file (type jpg)
-
-<use InitialDistributions.jpg>
-Package pdftex.def Info: InitialDistributions.jpg used on input line 278.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
-
-<FinalDistribution.jpg, id=83, 562.1pt x 421.575pt>
-File: FinalDistribution.jpg Graphic file (type jpg)
-
-<use FinalDistribution.jpg>
-Package pdftex.def Info: FinalDistribution.jpg used on input line 284.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
- [5 <./2DPoints.jpg> <./2DGaussians.jpg>]
-<WDVSN1D.jpg, id=87, 562.1pt x 421.575pt>
-File: WDVSN1D.jpg Graphic file (type jpg)
- <use WDVSN1D.jpg>
-Package pdftex.def Info: WDVSN1D.jpg used on input line 297.
-(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
-
-<LogWDVSN1D.jpg, id=88, 562.1pt x 421.575pt>
-File: LogWDVSN1D.jpg Graphic file (type jpg)
- <use LogWDVSN1D.jpg>
-Package pdftex.def Info: LogWDVSN1D.jpg used on input line 303.
-(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
-
-<WDVSDX.jpg, id=89, 562.1pt x 421.575pt>
-File: WDVSDX.jpg Graphic file (type jpg)
- <use WDVSDX.jpg>
-Package pdftex.def Info: WDVSDX.jpg used on input line 309.
-(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
-
-<1DMicroVelocity.jpg, id=90, 562.1pt x 421.575pt>
-File: 1DMicroVelocity.jpg Graphic file (type jpg)
- <use 1DMicroVelocity.jpg>
-Package pdftex.def Info: 1DMicroVelocity.jpg used on input line 344.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
-
-<1DMacroVelocity.jpg, id=91, 562.1pt x 421.575pt>
-File: 1DMacroVelocity.jpg Graphic file (type jpg)
- <use 1DMacroVelocity.jpg>
-Package pdftex.def Info: 1DMacroVelocity.jpg used on input line 350.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
-
-<WDVSNDX.jpg, id=92, 562.1pt x 421.575pt>
-File: WDVSNDX.jpg Graphic file (type jpg)
- <use WDVSNDX.jpg>
-Package pdftex.def Info: WDVSNDX.jpg used on input line 364.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
-
-<LogWDVSNDX.jpg, id=93, 562.1pt x 421.575pt>
-File: LogWDVSNDX.jpg Graphic file (type jpg)
- <use LogWDVSNDX.jpg>
-Package pdftex.def Info: LogWDVSNDX.jpg used on input line 370.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
- [6 <./InitialDistributions.jpg> <./FinalDistribution.jpg>] [7 <./WDVSN1D.jpg> 
-<./LogWDVSN1D.jpg> <./WDVSDX.jpg> <./1DMicroVelocity.jpg> <./1DMacroVelocity.jp
-g>]
-File: WDVSNDX.jpg Graphic file (type jpg)
-
-<use WDVSNDX.jpg>
-Package pdftex.def Info: WDVSNDX.jpg used on input line 402.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
- <2DMacroVelocity.jpg, id=104, 562.1pt x 421.575pt>
-File: 2DMacroVelocity.jpg Graphic file (type jpg)
-
-<use 2DMacroVelocity.jpg>
-Package pdftex.def Info: 2DMacroVelocity.jpg used on input line 408.
-(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 423.
-
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 70.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 423.
- [8 <./WDVSNDX.jpg> <./LogWDVSNDX.jpg> <./2DMacroVelocity.jpg>]
-Underfull \hbox (badness 4634) in paragraph at lines 437--438
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
+ [1
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+
+<2ndPPercentile.pdf, id=30, 466.7617pt x 379.36067pt>
+File: 2ndPPercentile.pdf Graphic file (type pdf)
+ <use 2ndPPercentile.pdf>
+Package pdftex.def Info: 2ndPPercentile.pdf used on input line 170.
+(pdftex.def)             Requested size: 186.70137pt x 151.74158pt.
+
+<1st1DWD.pdf, id=31, 488.65894pt x 384.05392pt>
+File: 1st1DWD.pdf Graphic file (type pdf)
+ <use 1st1DWD.pdf>
+Package pdftex.def Info: 1st1DWD.pdf used on input line 213.
+(pdftex.def)             Requested size: 195.4601pt x 153.61884pt.
+
+<1DWDNormal.jpg, id=32, 562.1pt x 421.575pt>
+File: 1DWDNormal.jpg Graphic file (type jpg)
+ <use 1DWDNormal.jpg>
+Package pdftex.def Info: 1DWDNormal.jpg used on input line 219.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+ [4 <./2ndPPercentile.pdf>] <2DPoints.jpg, id=52, 562.1pt x 421.575pt>
+File: 2DPoints.jpg Graphic file (type jpg)
+ <use 2DPoints.jpg>
+Package pdftex.def Info: 2DPoints.jpg used on input line 257.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+
+Overfull \hbox (13.4477pt too wide) in paragraph at lines 257--258
+ [][] 
+ []
+
+<2DGaussians.jpg, id=53, 562.1pt x 421.575pt>
+File: 2DGaussians.jpg Graphic file (type jpg)
+ <use 2DGaussians.jpg>
+Package pdftex.def Info: 2DGaussians.jpg used on input line 263.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+
+Overfull \hbox (13.4477pt too wide) in paragraph at lines 263--264
+ [][] 
+ []
+
+[5 <./1st1DWD.pdf> <./1DWDNormal.jpg>]
+<InitialDistributions.jpg, id=72, 562.1pt x 421.575pt>
+File: InitialDistributions.jpg Graphic file (type jpg)
+
+<use InitialDistributions.jpg>
+Package pdftex.def Info: InitialDistributions.jpg used on input line 306.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+
+<FinalDistribution.jpg, id=73, 562.1pt x 421.575pt>
+File: FinalDistribution.jpg Graphic file (type jpg)
+
+<use FinalDistribution.jpg>
+Package pdftex.def Info: FinalDistribution.jpg used on input line 312.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+ [6 <./2DPoints.jpg> <./2DGaussians.jpg>]
+<WDVSN1D.jpg, id=77, 562.1pt x 421.575pt>
+File: WDVSN1D.jpg Graphic file (type jpg)
+ <use WDVSN1D.jpg>
+Package pdftex.def Info: WDVSN1D.jpg used on input line 325.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+
+<LogWDVSN1D.jpg, id=78, 562.1pt x 421.575pt>
+File: LogWDVSN1D.jpg Graphic file (type jpg)
+ <use LogWDVSN1D.jpg>
+Package pdftex.def Info: LogWDVSN1D.jpg used on input line 331.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+
+<WDVSDX.jpg, id=79, 562.1pt x 421.575pt>
+File: WDVSDX.jpg Graphic file (type jpg)
+ <use WDVSDX.jpg>
+Package pdftex.def Info: WDVSDX.jpg used on input line 337.
+(pdftex.def)             Requested size: 224.83601pt x 168.627pt.
+
+<1DMicroVelocity.jpg, id=80, 562.1pt x 421.575pt>
+File: 1DMicroVelocity.jpg Graphic file (type jpg)
+ <use 1DMicroVelocity.jpg>
+Package pdftex.def Info: 1DMicroVelocity.jpg used on input line 372.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+
+<1DMacroVelocity.jpg, id=81, 562.1pt x 421.575pt>
+File: 1DMacroVelocity.jpg Graphic file (type jpg)
+ <use 1DMacroVelocity.jpg>
+Package pdftex.def Info: 1DMacroVelocity.jpg used on input line 378.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+
+<WDVSNDX.jpg, id=82, 562.1pt x 421.575pt>
+File: WDVSNDX.jpg Graphic file (type jpg)
+ <use WDVSNDX.jpg>
+Package pdftex.def Info: WDVSNDX.jpg used on input line 392.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+
+<LogWDVSNDX.jpg, id=83, 562.1pt x 421.575pt>
+File: LogWDVSNDX.jpg Graphic file (type jpg)
+ <use LogWDVSNDX.jpg>
+Package pdftex.def Info: LogWDVSNDX.jpg used on input line 398.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+ [7 <./InitialDistributions.jpg> <./FinalDistribution.jpg>] [8 <./WDVSN1D.jpg> 
+<./LogWDVSN1D.jpg> <./WDVSDX.jpg> <./1DMicroVelocity.jpg> <./1DMacroVelocity.jp
+g>]
+File: WDVSNDX.jpg Graphic file (type jpg)
+
+<use WDVSNDX.jpg>
+Package pdftex.def Info: WDVSNDX.jpg used on input line 430.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+ <2DMacroVelocity.jpg, id=94, 562.1pt x 421.575pt>
+File: 2DMacroVelocity.jpg Graphic file (type jpg)
+
+<use 2DMacroVelocity.jpg>
+Package pdftex.def Info: 2DMacroVelocity.jpg used on input line 436.
+(pdftex.def)             Requested size: 211.3883pt x 158.54051pt.
+ [9 <./WDVSNDX.jpg> <./LogWDVSNDX.jpg> <./2DMacroVelocity.jpg>]
+Underfull \hbox (badness 4634) in paragraph at lines 465--466
 []\OT1/cmr/m/n/10 Villani, C., Op-ti-mal trans-port, old and new, June 13, 2008
 , http://cedricvillani.org/wp-
  []
 
-[9] (./Paper.aux)
+[10] (./Paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  6516 strings out of 493117
- 95464 string characters out of 6135433
- 266258 words of memory out of 5000000
+ 95479 string characters out of 6135433
+ 266259 words of memory out of 5000000
  9814 multiletter control sequences out of 15000+600000
  14754 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,38p,998b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,38p,993b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -865,10 +855,10 @@ s/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/fonts
 type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2014/texmf-dist
 /fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on Paper.pdf (9 pages, 912328 bytes).
+Output written on Paper.pdf (10 pages, 654363 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 189 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
