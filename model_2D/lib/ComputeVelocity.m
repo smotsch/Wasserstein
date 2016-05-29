@@ -1,4 +1,4 @@
-function [distance,xval,yval] = ComputeVelocity(x,y,rhoMacro,c)
+function distance = ComputeVelocity(x,y,rhoMacro,c)
 
 [Y,I] = min(abs(rhoMacro(:)-c));
 [row, col] = ind2sub(size(rhoMacro),I);

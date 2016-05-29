@@ -13,7 +13,7 @@ D = 2/3;
 dt = .01;
 T  = 10;
 dx = .05;
-L  = 40;
+L  = 20;
 method_Kpp = 2;                           % 1: explicit, 2: Cranck-Nicholson
 Ninit  = 1e4;                           % number of particles initially
 seedNum = 3;
@@ -35,6 +35,7 @@ rhoMacro = KPP_Macro(rhoIC,x,D,dt,T,method_Kpp);
 rhoMicro = KPP_Micro(rhoIC,x,D,dt,T,Ninit,seedNum);
 
 %% B.1) Wasserstein distance
+addpath('lib')
 nT = length(rhoMacro(1,:));
 stock_WD = zeros(1,nT);
 for k = 1:nT
