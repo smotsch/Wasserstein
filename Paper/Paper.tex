@@ -58,6 +58,34 @@
 In recent years a number of mathematical models have been proposed that describe biological systems. One needs a way to compare the accuracy of these methods, in relation to each other and in relation to empirical data. The Wasserstein distance is a new metric that can be used for such a purpose. In one dimension, there exists a closed form expression for the Wasserstein distance, but in two or more dimensions, no such expression exists for most functions. In this paper we present a method for approximating the Wasserstein distance in two or more dimensions. We also consider several biological models and demonstrate how the Wasserstein distance can be used to analyze the effictiveness of such models.
 \end{abstract}
 
+
+\begin{center}
+\textbf{Recent progress:}
+\end{center}
+
+\begin{enumerate}
+\item Went through the 1D,2D non-bio work. All data files for images in 1D section have been saved to folder ``Data for Paper''. Also fixed wording in section. 
+\item For 1D bio work, saved data in folder ``Data for Paper''
+\begin{itemize}
+\item Put in images of rhoMicro, rhoMacro at time initial and final. 
+\item Fitted WD to N, Log(WD) to Log(N) and fitted WD to $\Delta x$, saved data.
+\item Computed rhoMicro, rhoMacro velocity, included images, saved data.
+\end{itemize}
+\item For 2D bio work, 
+\begin{itemize}
+\item Put in some basic wording
+\item Wrote Velocity code, included Macro velocity image and data in folder. 
+\item Fixed micro code.
+\item Added WD code for 2D (took old simplex method code and call it in 2DStochasticFinal).
+\end{itemize}
+\textbf{Questions:} 
+\begin{itemize}
+\item Normalization of Micro
+\item How large are our systems for the 2D bio? Even 121 variables takes 4.5 minutes to compute. Might try hungarian algorithm, interior point methods, etc to speed up.
+\end{itemize}
+\end{enumerate}
+
+\newpage
 \section{Introduction}
 
   Modeling biological systems has increased in popularity in recent years. From bacteria to swarm bees, a number of models have been proposed to describe each system. But the increase in number of models does not necessary improve the comprehension of the underlying population. One needs to be able to compare there predictions and more important to measure their agreement with experimental data. One way to do this is to use the Wassertstein distance, which allows us to compare discrete and continuous dynamics (i.e.e, systems of ODEs and PDEs). But so far Wasserstein distance has been used mainly as a powerful tool to prove analytic results (i.e. existence/uniqueness of solutions). In this paper we use the Wasserstein distance to compare the accuracy of biological models in relation to empirical data. 
