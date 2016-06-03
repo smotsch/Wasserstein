@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 % function rhoFINAL = Macro(x,y,D,dt,T,mu1,mu2,var1,var2)
+=======
+function rhoFINAL = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,shouldPlot)
+>>>>>>> origin/master
 
 % This code solves the equation: du/dt = D(d^2u/dx^2 + d^2u/dy^2) + u(1-u)
 % with two approaches. The first uses finite differencing two solve under
@@ -29,6 +33,7 @@
     [X1,X2] = meshgrid(x,y);
     X1_tp = X1';
     X2_tp = X2';
+<<<<<<< HEAD
     rhoIC = reshape(mvnpdf([X1_tp(:) X2_tp(:)],[mu1, mu2],[var1, var2]),nX,nY);
 
     % If we want Dirichlet BC (boundaries @ 0), use the following code
@@ -55,6 +60,16 @@
 tic
 rho(:,:,1) = rhoIC;
 for k = 1:nT-1
+=======
+    rhoIC = mvnpdf([X1_tp(:) X2_tp(:)],[mu1, mu2],diag([var1, var2]));
+        
+    % init
+    dx = x(2)-x(1);
+    nX = length(x);
+    nY = length(y);
+    nT = floor(T/dt + .5); 
+    tau = D*dt/(2*dx^2);
+>>>>>>> origin/master
     
    rho(1,1,k+1) =  rho(1,1,k)+ (dt/dx^2)*(rho(2,1,k)-rho(1,1,k)) + (dt/dy^2)*(rho(1,2,k)-rho(1,1,k));
    rho(end,end,k+1) =  rho(end,end,k)+ (dt/dx^2)*(-rho(end,end,k)+rho(end-1,end,k)) + (dt/dy^2)*(-rho(end,end,k)+rho(end,end-1,k));
@@ -88,6 +103,7 @@ toc
 %     
 %     
     % Initial Condition
+<<<<<<< HEAD
     rho2(:,1) = reshape(rhoIC, numel(rhoIC),1);
     alpha = (dt/(2*dx^2));
     beta = (dt/(2*dy^2));
@@ -117,6 +133,39 @@ toc
 %         a = gca; a.Box = 'on'; a.BoxStyle = 'full';
 %         colorbar;
 %         pause(.1);
+=======
+    rho = rhoIC;
+    rhoFINAL = zeros(nX,nY,nT+1);
+    rhoFINAL(:,:,1) = reshape(rhoIC,nX,nY,1);
+    
+    % Crank-Nicolson Method
+    addpath('lib')
+    diagMatrixA =(1+4*tau)*diag(ones(1,nX)) - tau*diag(ones(1,nX-1),1) - tau*diag(ones(1,nX-1),-1);
+    SubMatrixA = -tau*diag(ones(1,nX));
+    A = full( blktridiag(diagMatrixA,SubMatrixA,SubMatrixA,nY) ); 
+    Ainv = inv(A); 
+    diagMatrixB =(1-4*tau)*diag(ones(1,nX)) + tau*diag(ones(1,nX-1),1) + tau*diag(ones(1,nX-1),-1);
+    SubMatrixB = tau*diag(ones(1,nX));
+    B = full( blktridiag(diagMatrixB,SubMatrixB,SubMatrixB,nY) ); 
+
+
+    % loop time
+    for j = 2:nT
+        rho = Ainv*(B*rho + dt*f(rho));
+        rhoFINAL(:,:,j) = reshape(rho,nX,nY,1);
+        % plot
+        if (shouldPlot)
+            surf(X1,X2,rhoFINAL(:,:,j)'); 
+            title(['Solution at t=',num2str(j*dt,'%1.2f')]);
+            grid on; xlabel('x'); 
+            zlim([0 1.5]);
+            ylabel('y'); zlabel('f(x,y)'); 
+            axis('equal')
+            %a = gca; a.Box = 'on'; a.BoxStyle = 'full';
+            colorbar;
+            pause(.1);
+        end
+>>>>>>> origin/master
     end
     toc
 

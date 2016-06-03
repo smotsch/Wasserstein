@@ -5,41 +5,50 @@
 % Author: Shane Lubold (shane.lubold@asu.edu).
 clc; clear all; close all;
 
-    dx = .2;
-    dy = .2;
-    dt = .1;
-    T = 1;
-    t = 0:dt:T;
-    x = -1:dx:1;
-    y = -1:dy:1;
-%     x= linspace(-5,5,7);
-%     y = x;
-    D = 1;
-    N = 10^2;
-    c = .005; % threshold for computing contours.
+%% Parameters
+D = .01;                                % diffusion coefficients
+%% Parameters micro
+N = 10^2;                               % number of cells (initially)
+Mass_rhoIC = 2;
+seedNum = 1;
+% domain
+dx = .2;
+dy = .2;
+x = -6:dx:6;
+y = -5:dy:5;
+% time
+dt = .1;
+T = 10;
+t = 0:dt:T;
+% Initial Conditiion
+mu1 = 0;
+mu2 = 0;
+var1 = .1;
+var2 = .02;
+
+
+% Call Micro, Macro
+%------------------
+rhoMicro = KPP_Micro_2D(x,y,D,dt,T,N,seedNum,Mass_rhoIC,mu1,mu2,var1,var2);
+rhoMacro = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,true);
     
-    % Initial Conditiion for rhoMacro
-    mu1 = -1;
-    mu2 = 3;
-    var1 = 1;
-    var2 = 3;
+% Compute speed of traveling waves
+%---------------------------------
+addpath('lib')
+c = .2; % threshold for computing contours.
+for j = 1:floor(T/dt + .5)
+    distanceMacro(j) = ComputeVelocity(x,y,rhoMacro(:,:,j),c);
+end
+Fit = polyfit(t(2:end),distanceMacro,1);
+figure; 
+plot(t(2:end),distanceMacro,t(2:end),polyval(Fit,t(2:end)))
+xlabel('Time'); ylabel('Velocity');
+
+break
     
-    % Call Micro, Macro
-    rhoMicro = Micro(x,y,D,dt,T,N); 
-    rhoMacro = Macro(x,y,D,dt,T,mu1,mu2,var1,var2);
-    
-    % Compute Velocities
-    for j = 1:floor(T/dt + .5)
-        distanceMacro(j) = ComputeVelocity(x,y,rhoMacro(:,:,j),c);
-    end
-    
-    Fit = polyfit(1:size(rhoMacro,3),distanceMacro./dt,1);
-    figure; plot(Fit);
-    xlabel('Time'); ylabel('Velocity');
-    
-    %Compute the WD
-    [WD,Diff1,Diff2] = TwoDOptimizationCode(x,y,rhoMicro(:,:,end),...
-    rhoMacro(:,:,end))
+%Compute the WD
+[WD,Diff1,Diff2] = TwoDOptimizationCode(x,y,rhoMicro(:,:,end),...
+                                        rhoMacro(:,:,end))
     
   
 
