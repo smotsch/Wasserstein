@@ -6,51 +6,62 @@
 clc; clear all; close all;
 
 %% Parameters
-D = .01;                                % diffusion coefficients
+D = 10;                                % diffusion coefficients
 %% Parameters micro
-N = 10^2;                               % number of cells (initially)
+N = 10^4;                               % number of cells (initially)
 Mass_rhoIC = 2;
 seedNum = 1;
 % domain
-dx = .2;
-dy = .2;
-x = -6:dx:6;
-y = -5:dy:5;
+dx = 1;
+dy = 1;
+x = -2:dx:2;
+y = -2:dy:2;
 % time
-dt = .1;
-T = 10;
+dt = 10^-2;
+T =   5;
 t = 0:dt:T;
+
 % Initial Conditiion
 mu1 = 0;
 mu2 = 0;
-var1 = .1;
-var2 = .02;
+var1 = 1;
+var2 = 1;
+shouldPlot = 0;
 
 
 % Call Micro, Macro
 %------------------
-rhoMicro = KPP_Micro_2D(x,y,D,dt,T,N,seedNum,Mass_rhoIC,mu1,mu2,var1,var2);
-rhoMacro = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,true);
-    
+% rhoMicro = KPP_Micro_2D(x,y,D,dt,T,N,seedNum,Mass_rhoIC,mu1,mu2,var1,var2);
+rhoMicro = Micro(x,y,D,dt,T,N,mu1,mu2,var1,var2);
+[rhoDir,rho] = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,true);
+
+
 % Compute speed of traveling waves
 %---------------------------------
 addpath('lib')
 c = .2; % threshold for computing contours.
 for j = 1:floor(T/dt + .5)
-    distanceMacro(j) = ComputeVelocity(x,y,rhoMacro(:,:,j),c);
+    distanceMacro(j) = ComputeVelocity(x,y,rho(:,:,j),c);
 end
 Fit = polyfit(t(2:end),distanceMacro,1);
 figure; 
 plot(t(2:end),distanceMacro,t(2:end),polyval(Fit,t(2:end)))
 xlabel('Time'); ylabel('Velocity');
 
-break
+% break
     
 %Compute the WD
-[WD,Diff1,Diff2] = TwoDOptimizationCode(x,y,rhoMicro(:,:,end),...
-                                        rhoMacro(:,:,end))
+tic 
+[WD,Diff1,Diff2,C,A,b] = TwoDOptimizationCode(x,y,rhoMicro(:,:,end),...
+                                      rho(:,:,end));
+SimplexCode = toc;
+                                    
+ % Compare to solution from linprog
+ tic
+ [xval, fval,exitflag] = linprog(C,[],[],A,b,zeros(size(C)),[]);
+ LinProgCode = toc;
+ DiffInMethods = abs(WD-fval)
     
-  
 
 %     subplot(2,2,1); surf(x,y,rhoMicro(:,:,1)'); colorbar;
 %     xlabel('x'); ylabel('y'); title('Micro, Initial');

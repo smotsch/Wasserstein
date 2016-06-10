@@ -1,4 +1,4 @@
-function [final_cost, maxDiff1, maxDiff2] = TwoDptimizationCode(x,y,f,g)
+function [final_cost, maxDiff1, maxDiff2,C,A,b] = TwoDOptimizationCode(x,y,f,g)
 
 
     [X1, X2] = meshgrid(x,y);
@@ -37,6 +37,8 @@ function [final_cost, maxDiff1, maxDiff2] = TwoDptimizationCode(x,y,f,g)
     fprintf('---------------------------------------\n')
     fprintf('Phase 1: find a basic feasible solution\n')
     fprintf('---------------------------------------\n')
+    size(A)
+    size(b)
     [A_phase2,b_phase2,X,bv] = MinimizeTableau(A,b,-sum(A),-sum(b));
     r = C';
     
