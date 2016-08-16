@@ -12,13 +12,13 @@ N = 10^4;                               % number of cells (initially)
 Mass_rhoIC = 2;
 seedNum = 1;
 % domain
-dx = 1;
-dy = 1;
+dx = .8;
+dy = .8;
 x = -2:dx:2;
 y = -2:dy:2;
 % time
 dt = 10^-2;
-T =   5;
+T =   1;
 t = 0:dt:T;
 
 % Initial Conditiion
@@ -61,7 +61,8 @@ SimplexCode = toc;
  [xval, fval,exitflag] = linprog(C,[],[],A,b,zeros(size(C)),[]);
  LinProgCode = toc;
  DiffInMethods = abs(WD-fval)
-    
+   
+ xval = reshape(xval,length(x)^2, length(y)^2);
 
 %     subplot(2,2,1); surf(x,y,rhoMicro(:,:,1)'); colorbar;
 %     xlabel('x'); ylabel('y'); title('Micro, Initial');

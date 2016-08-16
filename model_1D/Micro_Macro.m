@@ -10,12 +10,12 @@
 D = 2/3;
 
 % Numerical parameters
-dt = .01;
-T  = 10;
-dx = .05;
-L  = 20;
+dt = .1;
+T  = 2;
+dx = .1;
+L  = 10;
 method_Kpp = 2;                           % 1: explicit, 2: Cranck-Nicholson
-Ninit  = 1e4;                           % number of particles initially
+Ninit  = 1e6;                           % number of particles initially
 seedNum = 3;
 % Initial condition
 x = -L:dx:L;
@@ -39,15 +39,15 @@ addpath('lib')
 nT = length(rhoMacro(1,:));
 stock_WD = zeros(1,nT);
 for k = 1:nT
-    stock_WD(k) = WD_Cont(rhoMicro(:,k)',rhoMacro(:,k)',x);
+    stock_WD(k) = WD_Cont(rhoMicro(:,k),rhoMacro(:,k),x);
 end
 %% B.2) Velocity traveling wave
 xStar_micro = zeros(1,nT);
 xStar_macro = zeros(1,nT);
 nX_half = floor(length(x)/2);
 for k = 1:nT
-    xStar_micro(k) = interp1(rhoMicro(nX_half:end,k)',x(nX_half:end),1/2,'left');
-    xStar_macro(k) = interp1(rhoMacro(nX_half:end,k)',x(nX_half:end),1/2,'left');
+    xStar_micro(k) = interp1(x(nX_half:end),rhoMicro(nX_half:end,k),1/2,'left');
+   xStar_macro(k) = interp1(x(nX_half:end),rhoMacro(nX_half:end,k),1/2,'left');
 end
 
 %---------------------------------------------------------%
@@ -61,6 +61,7 @@ plot(intT,stock_WD,'r','linewidth',2)
 xlabel('time')
 ylabel('WD')
 title('Wasserstein distance micro/macro over time')
+grid on;
 
 figure(2)
 if (shouldPlot)
@@ -69,23 +70,25 @@ else
     jumpPlot = nT-1;
 end
 for k = 1:jumpPlot:nT
-    plot(x,rhoMacro(:,k),'r','linewidth',2, ...
-         x,rhoMicro(:,k),'b','linewidth',2); 
+    plot(x,rhoMacro(:,k),'r','linewidth',2); hold on
+    plot(x,rhoMicro(:,k),'b','linewidth',2); 
+    hold off;
     legend('Macro','Micro'); 
     title(['Time t = ',num2str(k*dt,'%10.2f')])
     grid on; 
     axis([-L L 0 1.2]);
-        pause(.01);
+        pause(.3);
 end
 
 figure(3)
-plot(intT,xStar_macro,'r','linewidth',2, ...
-     intT,xStar_micro,'b','linewidth',2)
+plot(intT,xStar_macro,'r','linewidth',2); hold on;
+plot(intT,xStar_micro,'b','linewidth',2);
 legend('Macro','Micro','location','northwest'); 
 xlabel('time t')
 ylabel('position x_start')
+
 % estimation speed
-coeff = polyfit(intT(400:end),xStar_micro(400:end),1);
+coeff = polyfit(intT,xStar_micro,1);
 speedMicro = coeff(1);
-coeff = polyfit(intT(400:end),xStar_macro(400:end),1);
+coeff = polyfit(intT,xStar_macro,1);
 speedMacro = coeff(1);
