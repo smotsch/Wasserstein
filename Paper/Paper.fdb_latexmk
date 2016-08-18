@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1471322944 "Paper.tex" "Paper.pdf" "Paper" 1471322946
+["pdflatex"] 1471322944 "Paper.tex" "Paper.pdf" "Paper" 1471477955
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -140,13 +140,13 @@
   "InitialDistributions.jpg" 1463964897 23574 671951cce1426d2d29c14b50b4febd75 ""
   "LogWDVSN1D.jpg" 1463951328 21692 ac9bfe7812173beef34d1f9f627818bc ""
   "LogWDVSNDX.jpg" 1464063768 21236 b6ceab643e53a071962ad4862d5ee4fc ""
-  "Paper.aux" 1471322945 4263 8d2a1754a31f03ea693682bc47572615 ""
-  "Paper.tex" 1471322942 28501 68d0bdc90c7767ee4e0a61824a2f048b ""
+  "Paper.aux" 1471323092 4263 8d2a1754a31f03ea693682bc47572615 ""
+  "Paper.tex" 1471379807 28501 68d0bdc90c7767ee4e0a61824a2f048b ""
   "WDVSDX.jpg" 1463963775 22984 161b05313b980e7f273949a2ed472375 ""
   "WDVSN1D.jpg" 1463949938 20613 0089ff332acec7a2a589baa88cb1126b ""
   "WDVSNDX.jpg" 1464063176 19389 9a59a6b6180ff33f15818dbd5b76becc ""
   (generated)
-  "Paper.pdf"
-  "Paper.log"
-  "Paper.out"
   "Paper.aux"
+  "Paper.log"
+  "Paper.pdf"
+  "Paper.out"

@@ -5,23 +5,6 @@
 %  + 'birth process' with intensity 1-?.
 % 
 
-%  function [rho] = KPP_Micro(rhoIC,x,D,dt,T,N,seedNum)
-% 
-% Solve the KPP equation as a particle system:
-%    dX_t = ?dB_t
-%  + 'birth process' with intensity 1-?.
-
-%     x= linspace(-2,2,10);
-%     y = x;
-%     D= 100;
-%     T = 1000;
-%     dt = .1;
-%     N = 10^3;
-%     mu1 = 1;
-%     mu2 = 0;
-%     var1 = 1;
-%     var2 = 2;
-
     [xmesh,ymesh] = meshgrid(x,y);
     rho = zeros(numel(x),numel(y),floor(T/dt + .5));
     
@@ -60,14 +43,6 @@
 %         toc
     
     end
-    
-%     figure;
-%     for j = 1:floor(T/dt + .5)
-%         surf(rho(:,:,j)); grid on;
-%         xlabel('x'); ylabel('y'); zlabel('f(x,y)');
-%         pause(.1);
-%     end
-%    
 
  end
 
