@@ -6,19 +6,19 @@
 clc; clear all; close all;
 
 %% Parameters
-D = 1;                                % diffusion coefficients
+D = .1;                                % diffusion coefficients
 %% Parameters micro
 N = 10^3;                               % number of cells (initially)
 Mass_rhoIC = 2;
 seedNum = 1;
 % domain
-dx = .25;
-dy = .25;
-x = -5:dx:5;
-y = -5:dy:5;
+dx = .5;
+dy = .5;
+x = -2:dx:2;
+y = -2:dy:2;
 % time
-dt = .5;
-T =   5;
+dt = .1;
+T =   20;
 t = 0:dt:T;
 
 % Initial Conditiion
@@ -29,12 +29,13 @@ var2 = 1;
 shouldPlot = 0;
 
 
+rhoMicro = Micro(x,y,D,dt,T,N,mu1,mu2,var1,var2);
+[rhoDir,rho] = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,true);
+ 
 
 for q = 1:length(t)
 % Call Micro, Macro
 %------------------
-rhoMicro = Micro(x,y,D,dt,T,N,mu1,mu2,var1,var2);
-[rhoDir,rho] = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,true);
 
 rhoMicro(:,:,q) = rhoMicro(:,:,q)/sum(sum(rhoMicro(:,:,q)));
 rho(:,:,q) = rho(:,:,q)/sum(sum(rho(:,:,q)));
