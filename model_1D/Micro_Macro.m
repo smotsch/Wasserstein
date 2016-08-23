@@ -13,9 +13,9 @@ D = 2/3;
 dt = .1;
 T  = 2;
 dx = .1;
-L  = 10;
+L  = 3;
 method_Kpp = 2;                           % 1: explicit, 2: Cranck-Nicholson
-Ninit  = 1e6;                           % number of particles initially
+Ninit  = 1e2;                           % number of particles initially
 seedNum = 3;
 % Initial condition
 x = -L:dx:L;

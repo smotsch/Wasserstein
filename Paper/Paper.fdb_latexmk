@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1471322944 "Paper.tex" "Paper.pdf" "Paper" 1471477955
+["pdflatex"] 1471322944 "Paper.tex" "Paper.pdf" "Paper" 1471557455
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -146,7 +146,7 @@
   "WDVSN1D.jpg" 1463949938 20613 0089ff332acec7a2a589baa88cb1126b ""
   "WDVSNDX.jpg" 1464063176 19389 9a59a6b6180ff33f15818dbd5b76becc ""
   (generated)
-  "Paper.aux"
   "Paper.log"
-  "Paper.pdf"
   "Paper.out"
+  "Paper.aux"
+  "Paper.pdf"

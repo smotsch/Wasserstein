@@ -1,0 +1,17 @@
+\documentclass[8 pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+    \rhead{University of Oxford}
+\lhead{Shane M. Lubold}
+\linespread{.3}
+
+\begin{document}
+
+
+
+\end{document}  

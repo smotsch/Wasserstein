@@ -6,19 +6,19 @@
 clc; clear all; close all;
 
 %% Parameters
-D = .1;                                % diffusion coefficients
+D = 5;                                % diffusion coefficients
 %% Parameters micro
-N = 10^3;                               % number of cells (initially)
+N = 10^4;                               % number of cells (initially)
 Mass_rhoIC = 2;
 seedNum = 1;
 % domain
 dx = .5;
 dy = .5;
-x = -2:dx:2;
-y = -2:dy:2;
+x = -5:dx:5;
+y = -5:dy:5;
 % time
 dt = .1;
-T =   20;
+T =   5;
 t = 0:dt:T;
 
 % Initial Conditiion
