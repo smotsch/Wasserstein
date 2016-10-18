@@ -6,19 +6,21 @@
 clc; clear all; close all;
 
 %% Parameters
-D = 5;                                % diffusion coefficients
+D = 1;                                % diffusion coefficients
 %% Parameters micro
-N = 10^4;                               % number of cells (initially)
+N = 10^2;                               % number of cells (initially)
 Mass_rhoIC = 2;
 seedNum = 1;
 % domain
-dx = .5;
-dy = .5;
-x = -5:dx:5;
-y = -5:dy:5;
+dx = .1;
+dy = .1;
+%x = -5:dx:5;
+x = linspace(-5,5,2^3);
+y = x;
+%y = -5:dy:5;
 % time
-dt = .1;
-T =   5;
+dt = .01;
+T =   1;
 t = 0:dt:T;
 
 % Initial Conditiion
@@ -27,10 +29,18 @@ mu2 = 0;
 var1 = 1;
 var2 = 1;
 shouldPlot = 0;
+r = linspace(1.5,40,100);
+VelMac = zeros(length(t),length(r));
+VelMic = zeros(length(t),length(r));
 
 
-rhoMicro = Micro(x,y,D,dt,T,N,mu1,mu2,var1,var2);
+
+
+[rhoMicro, Part] = Micro(x,y,D,dt,T,N,mu1,mu2,var1,var2);
 [rhoDir,rho] = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,true);
+for l = 1:length(t)
+   VelMac(l,:) = ComputeVelocity(x,y,rho(:,:,l),r); 
+end
  
 
 for q = 1:length(t)
@@ -59,45 +69,8 @@ rho(:,:,q) = rho(:,:,q)/sum(sum(rho(:,:,q)));
 %[WD(q),Diff1,Diff2,C,A,b] = TwoDOptimizationCode(x,y,rhoMicro(:,:,q),...
  %                                     rho(:,:,q));
 %SimplexCode = toc;
-
-f = rho(:,:,q);
-g = rhoMicro(:,:,q);
-
-    [X1, X2] = meshgrid(x,y);
-    XMESH = [X1(:) X2(:)];
-    Xpos = XMESH;
-    Ypos = Xpos;
-    nX = length(Xpos);
-    nY = length(Ypos);
-
-    b = [f(:); g(:)];
-    
-    A = zeros(nX+nY,nX*nY);
-    for k=1:nX
-        A(k, (k-1)*nY+[1:nY]) = 1;
-    end
-    for k=1:nY
-        for k2=1:nX
-            A(k+nX, k + (k2-1)*nY) = 1;
-        end
-    end
-    
-%      % We have an extra constraint (last equality is automatically satisfied)
-      A(end,:) = [];
-      b(end)   = [];
-      
-          nX = length(Xpos(:,1));
-    nY = length(Ypos(:,1));
-    matrix_C = zeros(nX,nY);
-    for i=1:nX
-        for j=1:nY
-            matrix_C(i,j) = sqrt( (Ypos(j,1)-Xpos(i,1))^2 + (Ypos(j,2)-Xpos(i,2))^2 );
-        end
-    end
-    C = matrix_C(:);
-      
-
-                                    
+                                  
+[A, b, C] = OptimMatrices(rhoMicro(:,:,q),rho(:,:,q),x,y);
  % Compare to solution from linprog
  tic
  [xval, fval(q),exitflag] = linprog(C,[],[],A,b,zeros(size(C)),[]);
@@ -106,7 +79,6 @@ g = rhoMicro(:,:,q);
  end
  xval = reshape(xval,length(x)^2, length(y)^2);
  
-
 
  
 % end

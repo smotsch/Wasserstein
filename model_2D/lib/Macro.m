@@ -26,9 +26,6 @@ function [rhoDir,rho] = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,shouldPlot)
     dy = y(2)-y(1);
     nX = length(x);
     nY = length(y);
-    T = 20;
-    dt = 10^-2;
-    D = 1;
     nT = floor(T/dt + .5);
    
     [X1,X2] = meshgrid(x,y);

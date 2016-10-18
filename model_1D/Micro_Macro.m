@@ -9,13 +9,14 @@
 % Parameters model
 D = 2/3;
 
+
 % Numerical parameters
 dt = .1;
-T  = 2;
+T  = 10;
 dx = .1;
 L  = 3;
 method_Kpp = 2;                           % 1: explicit, 2: Cranck-Nicholson
-Ninit  = 1e2;                           % number of particles initially
+Ninit  = 10^3                           % number of particles initially
 seedNum = 3;
 % Initial condition
 x = -L:dx:L;
@@ -37,10 +38,12 @@ rhoMicro = KPP_Micro(rhoIC,x,D,dt,T,Ninit,seedNum);
 %% B.1) Wasserstein distance
 addpath('lib')
 nT = length(rhoMacro(1,:));
-stock_WD = zeros(1,nT);
+%stock_WD = zeros(1,nT);
+
 for k = 1:nT
-    stock_WD(k) = WD_Cont(rhoMicro(:,k),rhoMacro(:,k),x);
+    stock_WD1(k) = WD_Cont(rhoMicro(:,k),rhoMacro(:,k),x);
 end
+
 %% B.2) Velocity traveling wave
 xStar_micro = zeros(1,nT);
 xStar_macro = zeros(1,nT);
@@ -92,3 +95,6 @@ coeff = polyfit(intT,xStar_micro,1);
 speedMicro = coeff(1);
 coeff = polyfit(intT,xStar_macro,1);
 speedMacro = coeff(1);
+
+
+end
