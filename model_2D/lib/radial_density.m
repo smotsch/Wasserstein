@@ -4,6 +4,7 @@ function [densityMic,intR,int_rhoR] = radial_density(x,y,rhoMicro,rhoMacro,Part)
 dr = .05;
 intR = 0:dr:5;
 
+
 % Initialize mean vectors
 x_barMac = zeros(1,2); 
 x_barMic = zeros(1,2);
@@ -61,6 +62,16 @@ for k=1:nR
     r = intR(k);
     densityMic(k) = sum((Part(:,1)-x_barMic(1)).^2 + (Part(:,2) - x_barMic(2)).^2  < r^2);
 end
+
+% plot(intR,densityMic/max(densityMic))
+% title('Distribution of Particles')
+% grid on;
+% 
+% diffDensity = diff(densityMic);
+% plot(intR(2:end), diffDensity);
+% title('Difference in Distribution of Particles')
+% grid on;
+
 end
 
 

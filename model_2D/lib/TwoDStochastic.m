@@ -33,17 +33,15 @@ r = linspace(1.5,40,100);
 VelMac = zeros(length(t),length(r));
 VelMic = zeros(length(t),length(r));
 
-
-
-
 [rhoMicro, Part] = Micro(x,y,D,dt,T,N,mu1,mu2,var1,var2);
 [rhoDir,rho] = Macro(x,y,D,dt,T,mu1,mu2,var1,var2,true);
+
 for l = 1:length(t)
    VelMac(l,:) = ComputeVelocity(x,y,rho(:,:,l),r); 
 end
  
 
-for q = 1:length(t)
+for q = 1:length(t)-1
 % Call Micro, Macro
 %------------------
 
