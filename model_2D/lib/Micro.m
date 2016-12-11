@@ -6,10 +6,6 @@ function [rho,X] = Micro(x,y,D,dt,T,N,mu1,mu2,var1,var2)
 %  + 'birth process' with intensity 1-?.
 % 
     [X1,X2] = meshgrid(x,y);
-    X1_tp = X1';
-    X2_tp = X2';
-        nX = length(x);
-    nY = length(y);
     [xmesh,ymesh] = meshgrid(x,y);
     rho = zeros(numel(x),numel(y),floor(T/dt + .5));
     
